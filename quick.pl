@@ -4,9 +4,14 @@ use Sereal::Encoder qw(sereal_encode_with_object);
 use Sereal::Decoder
   qw(sereal_decode_with_object);
 use Time::HiRes qw(time);
+use Moose::Util qw( apply_all_roles );
+
 
 my $t1 = time;
+
 my $mol = HackaMol->new->pdbid_mol('2cba');
+
+apply_all_roles($mol, 'HackaMol::Roles::SerialRole');
 my $t2 = time;
 printf ("read: %10.2f\n", $t2 - $t1);
 
