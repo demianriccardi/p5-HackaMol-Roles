@@ -1,8 +1,6 @@
 use Modern::Perl;
 use HackaMol;
-use Sereal::Encoder qw(sereal_encode_with_object);
-use Sereal::Decoder
-  qw(sereal_decode_with_object);
+use HackaMol::Roles::SerialRole;
 use Time::HiRes qw(time);
 use Moose::Util qw( apply_all_roles );
 
@@ -10,26 +8,33 @@ use Moose::Util qw( apply_all_roles );
 my $t1 = time;
 
 my $mol = HackaMol->new->pdbid_mol('2cba');
-
 apply_all_roles($mol, 'HackaMol::Roles::SerialRole');
 my $t2 = time;
-printf ("read: %10.2f\n", $t2 - $t1);
 
-my $encoder = Sereal::Encoder->new; #({...options...});
+printf ("read: %10.2f\n", $t2 - $t1);
+my $mol2 = $mol->clone;
+my $t3 = time;
+printf ("clone %10.2f\n", $t3- $t2);
+
+$mol2->print_pdb;
+print "\n";
+print $mol . "\n";
+print $mol2 . "\n";
+
+#my $encoder = Sereal::Encoder->new; #({...options...});
 #my $out = $encoder->encode($mole);
 
-my $shit = sereal_encode_with_object($encoder, $mol);
-my $t3 = time;
+#my $shit = sereal_encode_with_object($encoder, $mol);
+#my $t3 = time;
 
-printf ("encode: %10.2f\n", $t3 - $t2);
+#printf ("encode: %10.2f\n", $t3 - $t2);
 
-my $shit2;
-my $decoder = Sereal::Decoder->new;
-$decoder->decode($shit, $shit2);
-my $t4 = time;
+#my $shit2;
+#my $decoder = Sereal::Decoder->new;
+#$decoder->decode($shit, $shit2);
+#my $t4 = time;
 
 #$shit2->print_pdb;
-printf ("decode: %10.2f\n", $t4 - $t3);
 
 #my $shit2 = sereal_decode_with_object($shit);
 #my $decoder = Sereal::Decoder->new({...options...}); 
