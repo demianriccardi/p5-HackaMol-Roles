@@ -15,11 +15,21 @@ printf ("read: %10.2f\n", $t2 - $t1);
 my $mol2 = $mol->clone;
 my $t3 = time;
 printf ("clone %10.2f\n", $t3- $t2);
+#$mol2->print_pdb;
+#print "\n";
+#print $mol . "\n";
+#print $mol2 . "\n";
 
-$mol2->print_pdb;
-print "\n";
-print $mol . "\n";
-print $mol2 . "\n";
+$mol->serial_overwrite(1);
+$mol->store('shit.sereal');
+
+my $t4 = time;
+printf ("store: %10.2f\n", $t4 - $t3);
+
+my $mol_load = $mol->load('shit.sereal');
+
+use YAML::XS;
+print Dump $mol_load;
 
 #my $encoder = Sereal::Encoder->new; #({...options...});
 #my $out = $encoder->encode($mole);

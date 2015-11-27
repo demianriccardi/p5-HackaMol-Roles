@@ -10,11 +10,10 @@ use JSON::XS;
 use YAML::XS;
 use Carp;
 
-has 'store_format',    is => 'rw', isa => 'Str' , lazy => 1, default => 'SEREAL';
-has 'store_carplevel', is => 'rw', isa => 'Num' , lazy => 1, default => 0;
-has 'overwrite',       is => 'rw', isa => 'Bool', lazy => 1, default => 0;
-has 'store_fn',        is => 'rw', isa =>  Path, predicate => 'has_store_fn';
-has 'load_fn',         is => 'rw', isa =>  Path, predicate => 'has_load_fn';
+has 'serial_format',    is => 'rw', isa => 'Str' , lazy => 1, default => 'SEREAL';
+has 'serial_carplevel', is => 'rw', isa => 'Num' , lazy => 1, default => 0;
+has 'serial_overwrite', is => 'rw', isa => 'Bool', lazy => 1, default => 0;
+has 'serial_fn',       is => 'rw', isa =>  Path,   coerce=>1, predicate => 'has_serial_fn';
 
 # start simple, get something working and then make more sophisticated
 # we will need to test if inserted functions are retained
@@ -26,15 +25,15 @@ sub freeze {
   my ($self, $structure) = @_ ;
   unless ($structure) {
     $structure = $self; 
-    carp "self.freeze(self)" if $self->store_carplevel;
+    carp "self.freeze(self)" if $self->serial_carplevel;
   }
 
-  return (Sereal::Encoder->new->encode ($structure)) if uc($self->store_format) =~ m/SEREAL/;
-  return (CBOR::XS->new->encode ($structure))        if uc($self->store_format) =~ m/CBOR/;
-  return (JSON::XS->new->encode ($structure))        if uc($self->store_format) =~ m/JSON/;
-  return (YMAL::XS::Dump ($structure))               if uc($self->store_format) =~ m/YAML/;
+  return (Sereal::Encoder->new->encode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
+  return (CBOR::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
+  return (JSON::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/JSON/;
+  return (YMAL::XS::Dump ($structure))               if uc($self->serial_format) =~ m/YAML/;
 
-  carp "return 0; self.store_format is not supported: ", $self->store_format;
+  carp "return 0; self.serial_format is not supported: ", $self->serial_format;
   return (0);
 
 }
@@ -43,16 +42,16 @@ sub thaw {
 
   my ($self, $structure) = @_ ;
   unless ($structure) {
-    carp "return 0; must pass serialized data as argument: store_format: ", $self->store_format;
+    carp "return 0; must pass serialized data as argument: serial_format: ", $self->serial_format;
     return(0);
   }
   
-  return (Sereal::Decoder->new->decode ($structure)) if uc($self->store_format) =~ m/SEREAL/;
-  return (CBOR::XS->new->decode ($structure))        if uc($self->store_format) =~ m/CBOR/;
-  return (JSON::XS->new->decode ($structure))        if uc($self->store_format) =~ m/JSON/;
-  return (YMAL::XS::Load ($structure))               if uc($self->store_format) =~ m/YAML/;
+  return (Sereal::Decoder->new->decode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
+  return (CBOR::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
+  return (JSON::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/JSON/;
+  return (YMAL::XS::Load ($structure))               if uc($self->serial_format) =~ m/YAML/;
   
-  carp "return 0; self.store_format is not supported: ", $self->store_format;
+  carp "return 0; self.serial_format is not supported: ", $self->serial_format;
   return (0);
 }
 
@@ -60,7 +59,7 @@ sub clone {
   my ($self, $structure) = @_ ;
   unless ($structure) {
     $structure = $self; 
-    carp "self.freeze(self)" if $self->store_carplevel;
+    carp "self.freeze(self)" if $self->serial_carplevel;
   }
   # a clone is a freeze and thaw
   my $serial = $self->freeze($structure);
@@ -69,27 +68,27 @@ sub clone {
 
 sub store{
   #return pdb contents downloaded from pdb.org
-  my ($self,$structure, $filename) = @_;
+  my ($self,$filename, $structure) = @_;
   $filename = Path::Tiny->tempfile unless $filename;
 
   unless ($structure) {
     $structure = $self;
-    carp "self.store(self,$filename)" if $self->store_carplevel;
+    carp "self.store(self,$filename)" if $self->serial_carplevel;
   }
 
   if (-e $filename){
-    unless($self->overwrite){
-      croak "$filename exists.  set self.overwrite(1) to overwrite";
+    unless($self->serial_overwrite){
+      croak "$filename exists.  set self.serial_overwrite(1) to overwrite";
     }
     else {
-      carp "overwriting $filename" if $self->store_carplevel;
+      carp "overwriting $filename" if $self->serial_carplevel;
     }
   }
 
-  $self->store_fn($filename);
+  $self->serial_fn($filename);
   
   my $serial = $self->freeze($structure);
-  $filename->spew_raw($serial);  # write
+  $self->serial_fn->spew_raw($serial);  # write
   return (1);
 }
 
@@ -100,10 +99,10 @@ sub load{
     croak "pass filename self.load(filename) or set self.load_fn(filename)" unless $self->has_load_fn;
   }
   else {
-    carp "rewriting self.load_fn($filename)" if $self->has_load_fn;
-    $self->load_fn($filename);
+    carp "rewriting self.load_fn($filename)" if $self->has_serial_fn;
+    $self->serial_fn($filename);
   }
-  my $serial = $self->load_fn->openr_raw;
+  my $serial = $self->serial_fn->slurp_raw;
   my $object = $self->thaw($serial);   
   
   return ($object);
@@ -130,7 +129,7 @@ Currently, the Role has one method and one attribute for interacting with the Pr
 
 fetches a pdb from pdb.org and returns the file in a string.
 
-=method getstore_pdbid 
+=method getserial_pdbid 
 
 arguments: pdbid and filename for writing (optional). 
 Fetches a pdb from pdb.org and stores it in your working directory unless {it exists and overwrite(0)}. If a filename is not
