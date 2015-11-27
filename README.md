@@ -36,3 +36,10 @@ INSTALLATION
 ============
 This role will install into the file directory of the HackaMol core, but the core does not depend on this Role as of this writing.  See the synopsis above for an example of how to apply the role to an instance of a HackaMol object.
 
+WARNINGS    
+============
+This module uses spew\_raw and slurp\_raw from PATH::TINY.  Take the normal precautions for using slurp.
+
+
+
+

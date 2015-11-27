@@ -7,7 +7,7 @@ use Moose::Util qw( apply_all_roles );
 
 my $t1 = time;
 
-my $mol = HackaMol->new->pdbid_mol('2cba');
+my $mol = HackaMol->new->pdbid_mol('1l2y');
 apply_all_roles($mol, 'HackaMol::Roles::SerialRole');
 my $t2 = time;
 
@@ -20,16 +20,24 @@ printf ("clone %10.2f\n", $t3- $t2);
 #print $mol . "\n";
 #print $mol2 . "\n";
 
+#$mol->serial_format('CBOR');
+#$mol->serial_format('YAML');
 $mol->serial_overwrite(1);
-$mol->store('shit.sereal');
+$mol->store('shit.ser');
 
 my $t4 = time;
 printf ("store: %10.2f\n", $t4 - $t3);
 
-my $mol_load = $mol->load('shit.sereal');
+my $mol_load = $mol->load('shit.ser');
 
-use YAML::XS;
-print Dump $mol_load;
+my $t5 = time;
+
+printf ("load: %10.2f\n", $t5 - $t4);
+$mol_load->print_xyz_ts([0 .. $mol_load->tmax], 'shit.xyz');
+
+#use YAML::XS;
+#print Dump $mol_load;
+
 
 #my $encoder = Sereal::Encoder->new; #({...options...});
 #my $out = $encoder->encode($mole);
