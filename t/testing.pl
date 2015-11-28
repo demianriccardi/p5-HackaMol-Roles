@@ -7,7 +7,7 @@ use Moose::Util qw( apply_all_roles );
 
 my $t1 = time;
 
-my $mol = HackaMol->new->pdbid_mol('1l2y');
+my $mol = HackaMol->new->pdbid_mol('2cba');
 apply_all_roles($mol, 'HackaMol::Roles::SerialRole');
 my $t2 = time;
 
@@ -20,7 +20,7 @@ printf ("clone %10.2f\n", $t3- $t2);
 #print $mol . "\n";
 #print $mol2 . "\n";
 
-#$mol->serial_format('CBOR');
+$mol->serial_format('CBOR');
 #$mol->serial_format('YAML');
 $mol->serial_overwrite(1);
 $mol->store('shit.ser');

@@ -29,8 +29,8 @@ sub freeze {
   }
 
   return (Sereal::Encoder->new->encode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
-  return (CBOR::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
-  return (JSON::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/JSON/;
+#  return (CBOR::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
+#  return (JSON::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/JSON/;
   return (YAML::XS::Dump ($structure))               if uc($self->serial_format) =~ m/YAML/;
 
   carp "return 0; self.serial_format is not supported: ", $self->serial_format;
@@ -47,8 +47,8 @@ sub thaw {
   }
   
   return (Sereal::Decoder->new->decode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
-  return (CBOR::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
-  return (JSON::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/JSON/;
+#  return (CBOR::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
+#  return (JSON::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/JSON/;
   return (YAML::XS::Load ($structure))               if uc($self->serial_format) =~ m/YAML/;
   
   carp "return 0; self.serial_format is not supported: ", $self->serial_format;
