@@ -1,0 +1,35 @@
+#!/usr/bin/env perl
+
+use warnings;
+use strict;
+use Test::More;
+use File::Slurp;
+use Cwd;
+use Test::Warn;
+use Test::Output;
+use Test::Fatal qw(lives_ok dies_ok);
+use Test::Moose;
+use Math::Vector::Real;
+use HackaMol::Atom;
+use HackaMol::AtomGroup;
+
+my @attributes = qw(
+  atoms
+  is_constrained
+);
+my @methods = qw(
+  bin_atoms dipole COM COZ
+  dipole_moment total_charge
+  count_unique_atoms
+  bin_atoms_name all_atoms
+  push_atoms get_atoms delete_atoms
+  count_atoms clear_atoms
+  natoms
+  select_atoms map_atoms
+  first_atoms sort_atoms
+  splice_atoms insert_atoms
+  shuffle_atoms
+  rotate translate print_xyz
+  fix_serial tmax what_time
+);
+

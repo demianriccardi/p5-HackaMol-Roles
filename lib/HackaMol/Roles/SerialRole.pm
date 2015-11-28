@@ -13,7 +13,7 @@ use Carp;
 has 'serial_format',    is => 'rw', isa => 'Str' , lazy => 1, default => 'SEREAL';
 has 'serial_carplevel', is => 'rw', isa => 'Num' , lazy => 1, default => 0;
 has 'serial_overwrite', is => 'rw', isa => 'Bool', lazy => 1, default => 0;
-has 'serial_fn',       is => 'rw', isa =>  Path,   coerce=>1, predicate => 'has_serial_fn';
+has 'serial_fn',        is => 'rw', isa =>  Path,  coerce=>1, predicate => 'has_serial_fn';
 
 # start simple, get something working and then make more sophisticated
 # we will need to test if inserted functions are retained
