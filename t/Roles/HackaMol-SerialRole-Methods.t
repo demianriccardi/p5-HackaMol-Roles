@@ -10,21 +10,6 @@ use Moose::Util qw(apply_all_roles);
 use Test::Moose;
 use HackaMol;
 
-my @attributes = qw(
-  serial_format
-  serial_carplevel
-  serial_overwrite
-  serial_fn
-);
-my @methods = qw(
-  has_serial_fn
-  freeze
-  thaw
-  clone
-  store
-  load
-);
-
 
 my $bldr = new HackaMol;
 apply_all_roles($bldr, 'HackaMol::Roles::SerialRole');
@@ -34,6 +19,7 @@ map can_ok( $bldr, $_ ), @methods;
 
 my $mol = $bldr->load("t/lib/1L2Y_mod123.sereal");
 bless($mol,'HackaMol::Molecule');
+
 my $mol2 = $bldr->clone($mol);
 
 #they look the same
