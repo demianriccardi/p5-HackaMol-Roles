@@ -29,7 +29,7 @@ SYNOPSIS
 
 DESCRIPTION
 ============
-The ability to serialize HackaMol objects allows users to save the state of an object, which is useful for future work or for sharing.  The serialization of HackaMol objects is not trivial since each class contains other objects, such as Math::Vector::Real, or potentially functions that the user has defined.  This role is under development and the goal is to have ways to use JSON, YAML, SEREAL, and CBOR.
+The ability to serialize HackaMol objects allows users to save the state of an object, which is useful for future work or for sharing.  The serialization of HackaMol objects is not trivial since each class contains other objects, such as Math::Vector::Real, or potentially functions that the user has defined.  This role is under development and the goal is to have ways to use JSON, YAML, Sereal, and CBOR. Currently, Sereal and YAML work (using default settings).  This role seems to make the most sense using a builder class, such as HackaMol.pm.  Applying the role to the HackaMol::Molecule class felt awkward during testing. 
       
  
 INSTALLATION
