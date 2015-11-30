@@ -15,10 +15,10 @@ my $bldr = new HackaMol;
 apply_all_roles($bldr, 'HackaMol::Roles::SerialRole');
 $bldr->serial_overwrite(1);
 
+
 {
 # test a biological molecule with multiple coordinates per atom
-  my $mol = $bldr->load("t/lib/1L2Y_mod123.sereal");
-  bless($mol,'HackaMol::Molecule');
+  my $mol = $bldr->load("t/lib/1L2Y_mod123.sereal",'HackaMol::Molecule');
 
   my $mol2 = $bldr->clone($mol);
 

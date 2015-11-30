@@ -22,11 +22,12 @@ has 'serial_fn',        is => 'rw', isa =>  Path,  coerce=>1, predicate => 'has_
 
 sub freeze {
 
-  my ($self, $structure) = @_ ;
-  unless ($structure) {
-    $structure = $self; 
-    carp "self.freeze(self)" if $self->serial_carplevel;
+  my $self = shift;
+  unless (@_ == 1) {
+    carp "serial_freeze> must pass one object as argument; return 0";
+    return (0); 
   }
+  my $structure = shift;
 
   return (Sereal::Encoder->new->encode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
 #  return (CBOR::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
@@ -40,11 +41,12 @@ sub freeze {
 
 sub thaw {
 
-  my ($self, $structure) = @_ ;
-  unless ($structure) {
-    carp "return 0; must pass serialized data as argument: serial_format: ", $self->serial_format;
-    return(0);
+  my $self = shift;
+  unless (@_ == 1) {
+    carp "serial_thaw> must pass one object as argument; return 0";
+    return (0);
   }
+  my $structure = shift;
   
   return (Sereal::Decoder->new->decode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
 #  return (CBOR::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
@@ -56,29 +58,31 @@ sub thaw {
 }
 
 sub clone {
-  my ($self, $structure) = @_ ;
-  unless ($structure) {
-    $structure = $self; 
-    carp "self.freeze(self)" if $self->serial_carplevel;
+  my $self = shift;
+  unless (@_ == 1) {
+    carp "serial_clone> must pass one object as argument; return 0";
+    return (0);
   }
+  my $structure = shift;
+
   # a clone is a freeze and thaw
   my $serial = $self->freeze($structure);
   return $self->thaw($serial);
 }
 
 sub store{
-  #return pdb contents downloaded from pdb.org
-  my ($self,$filename, $structure) = @_;
-  $filename = Path::Tiny->tempfile unless $filename;
 
-  unless ($structure) {
-    $structure = $self;
-    carp "self.store(self,$filename)" if $self->serial_carplevel;
+  my $self = shift;
+  unless (@_ == 2) {
+    carp "serial_store> must pass two arguments: filename and object; return 0";
+    return (0);
   }
+  my ($filename,$structure) = (shift,shift);
 
   if (-e $filename){
     unless($self->serial_overwrite){
-      croak "$filename exists.  set self.serial_overwrite(1) to overwrite";
+      carp "$filename exists.  set self.serial_overwrite(1) to overwrite";
+      return (0);
     }
     else {
       carp "overwriting $filename" if $self->serial_carplevel;
@@ -93,18 +97,20 @@ sub store{
 }
 
 sub load{
-  #return HackaMol object loaded from a file 
-  my ($self,$filename) = @_;
-  unless ($filename) {
-    croak "pass filename self.load(filename) or set self.load_fn(filename)" unless $self->has_load_fn;
+  my $self = shift;
+  unless (@_ == 2) {
+    carp "serial_load> must pass two arguments: filename and object class; return 0";
+    return (0);
   }
-  else {
-    carp "rewriting self.load_fn($filename)" if $self->has_serial_fn;
-    $self->serial_fn($filename);
-  }
+  my ($filename,$class) = (shift,shift);
+
+  carp "rewriting self.load_fn($filename)" if $self->has_serial_fn;
+  $self->serial_fn($filename);
+
   my $serial = $self->serial_fn->slurp_raw;
   my $object = $self->thaw($serial);   
-  
+
+  bless($object,$class);  
   return ($object);
 }
 
