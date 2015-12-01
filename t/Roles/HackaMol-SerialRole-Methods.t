@@ -15,11 +15,12 @@ my $bldr = new HackaMol;
 apply_all_roles($bldr, 'HackaMol::Roles::SerialRole');
 $bldr->serial_overwrite(1);
 
+my $mol = $bldr->load("t/lib/1L2Y_mod123.sereal",'HackaMol::Molecule');
 
+foreach my $format (qw/seReal yaMl/)
 {
 # test a biological molecule with multiple coordinates per atom
-  my $mol = $bldr->load("t/lib/1L2Y_mod123.sereal",'HackaMol::Molecule');
-
+  $bldr->serial_format($format);
   my $mol2 = $bldr->clone($mol);
 
   #they look the same
@@ -30,7 +31,7 @@ $bldr->serial_overwrite(1);
   }
 
   #make different
-  $mol->get_atoms(0)->change_symbol("Hg");
+  $mol2->get_atoms(0)->change_symbol("Hg");
 
   #the COM of mol should change with one heavy atom substitution
   foreach (0 .. $mol2->tmax) {
@@ -38,15 +39,9 @@ $bldr->serial_overwrite(1);
     $mol2->t($_);
     cmp_ok(abs($mol->COM-$mol2->COM),'>','1E-1', "Cloned molecule is different after changing atom, COM as a function of time: $_");
   }
-}
-
-{
 # test storage
-  my $mol = $bldr->read_file_mol("t/lib/Hg.2-18w.xyz");
-  bless($mol,'HackaMol::Molecule');
-  $bldr->store('t/lib/Hg.2-18w.sereal',$mol);
-  $bldr->serial_format("YAML");
-  $bldr->store('t/lib/Hg.2-18w.yaml',$mol);
+  my $hgmol = $bldr->read_file_mol("t/lib/Hg.2-18w.xyz");
+  $bldr->store('t/lib/Hg.2-18w.'.lc($format),$hgmol);
 }
 
 done_testing();
