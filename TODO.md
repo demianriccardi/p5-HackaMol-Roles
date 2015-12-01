@@ -1,5 +1,6 @@
 # JSON and CBOR 
 * need object encoding methods 
 
-# improved test suite
+#should this be released as HackaMol::Roles::SerialRole ?
+it does not depend on HackaMol.
 
