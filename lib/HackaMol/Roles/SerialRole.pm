@@ -24,7 +24,7 @@ sub freeze {
 
   my $self = shift;
   unless (@_ == 1) {
-    carp "serial_freeze> must pass one object as argument; return 0";
+    carp "serial_freeze> must pass one object as argument; return 0" if $self->serial_carplevel;
     return (0); 
   }
   my $structure = shift;
@@ -34,7 +34,7 @@ sub freeze {
 #  return (JSON::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/JSON/;
   return (YAML::XS::Dump ($structure))               if uc($self->serial_format) =~ m/YAML/;
 
-  carp "return 0; self.serial_format is not supported: ", $self->serial_format;
+  carp "return 0; self.serial_format is not supported: ". $self->serial_format if $self->serial_carplevel;
   return (0);
 
 }
@@ -43,7 +43,7 @@ sub thaw {
 
   my $self = shift;
   unless (@_ == 1) {
-    carp "serial_thaw> must pass one object as argument; return 0";
+    carp "serial_thaw> must pass one object as argument; return 0" if $self->serial_carplevel;
     return (0);
   }
   my $structure = shift;
@@ -53,14 +53,14 @@ sub thaw {
 #  return (JSON::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/JSON/;
   return (YAML::XS::Load ($structure))               if uc($self->serial_format) =~ m/YAML/;
   
-  carp "return 0; self.serial_format is not supported: ", $self->serial_format;
+  carp "return 0; self.serial_format is not supported: ", $self->serial_format if $self->serial_carplevel;
   return (0);
 }
 
 sub clone {
   my $self = shift;
   unless (@_ == 1) {
-    carp "serial_clone> must pass one object as argument; return 0";
+    carp "serial_clone> must pass one object as argument; return 0" if $self->serial_carplevel;
     return (0);
   }
   my $structure = shift;
@@ -74,14 +74,14 @@ sub store{
 
   my $self = shift;
   unless (@_ == 2) {
-    carp "serial_store> must pass two arguments: filename and object; return 0";
+    carp "serial_store> must pass two arguments: filename and object; return 0" if $self->serial_carplevel;
     return (0);
   }
   my ($filename,$structure) = (shift,shift);
 
   if (-e $filename){
     unless($self->serial_overwrite){
-      carp "$filename exists.  set self.serial_overwrite(1) to overwrite";
+      carp "$filename exists.  set self.serial_overwrite(1) to overwrite" if $self->serial_carplevel;
       return (0);
     }
     else {
@@ -99,14 +99,12 @@ sub store{
 sub load{
   my $self = shift;
   unless (@_ == 2) {
-    carp "serial_load> must pass two arguments: filename and object class; return 0";
+    carp "serial_load> must pass two arguments: filename and object class; return 0" if $self->serial_carplevel;
     return (0);
   }
   my ($filename,$class) = (shift,shift);
 
-  carp "rewriting self.load_fn($filename)" if $self->has_serial_fn;
   $self->serial_fn($filename);
-
   my $serial = $self->serial_fn->slurp_raw;
   my $object = $self->thaw($serial);   
 

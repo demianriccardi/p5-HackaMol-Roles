@@ -31,12 +31,12 @@ foreach my $format (qw/seReal yaMl/)
   }
 
   #make different
-  $mol2->get_atoms(0)->change_symbol("Hg");
 
   #the COM of mol should change with one heavy atom substitution
   foreach (0 .. $mol2->tmax) {
     $mol->t($_);
     $mol2->t($_);
+    $mol2->translate(-5*$mol2->COM);
     cmp_ok(abs($mol->COM-$mol2->COM),'>','1E-1', "Cloned molecule is different after changing atom, COM as a function of time: $_");
   }
 # test storage
