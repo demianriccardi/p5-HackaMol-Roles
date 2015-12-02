@@ -16,14 +16,18 @@ SYNOPSIS
        use HackaMol::Roles::SerialRole;
        use Moose::Util qw( apply_all_roles );
 
-       my $mol = HackaMol->new->pdbid_mol('2cba');
+       my $bldr = HackaMol->new;
+       my $mol = $bldr->pdbid_mol('2cba');
 
-       apply_all_roles($mol, 'HackaMol::Roles::SerialRole');
+       apply_all_roles($bldr, 'HackaMol::Roles::SerialRole');
 
-       my $mol2 = $mol->clone;
-       $mol2->serial_format('Sereal');
-       $mol2->store('test.sereal');
-       my $mol3 = $mol2->load('test.sereal');
+       my $mol2 = $bldr->clone($mol);
+       $bldr->serial_format('Sereal');
+       $bldr->store('test.sereal',$mol);
+       my $mol3 = $bldr->load('test.sereal');
+       $bldr->serial_format('YAML');
+       $bldr->store('test.yaml',$mol);
+       my $mol4 = $bldr->load('test.yaml');
       
 ``` 
 
