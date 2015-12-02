@@ -24,10 +24,10 @@ SYNOPSIS
        my $mol2 = $bldr->clone($mol);
        $bldr->serial_format('Sereal');
        $bldr->store('test.sereal',$mol);
-       my $mol3 = $bldr->load('test.sereal');
+       my $mol3 = $bldr->load('test.sereal', 'HackaMol::Molecule');
        $bldr->serial_format('YAML');
        $bldr->store('test.yaml',$mol);
-       my $mol4 = $bldr->load('test.yaml');
+       my $mol4 = $bldr->load('test.yaml','HackaMol::Molecule');
       
 ``` 
 
