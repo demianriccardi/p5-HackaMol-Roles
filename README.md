@@ -1,4 +1,8 @@
-# p5-HackaMol-Roles-SelectionRole
+# p5-HackaMol-Roles
+
+This repo will contain all the roles for hackamol.
+
+SelectionRole
 
 developing this outside the core for a change.
 
