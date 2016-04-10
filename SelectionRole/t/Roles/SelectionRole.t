@@ -21,13 +21,11 @@ map has_attribute_ok( $mol, $_ ), @attributes;
 map can_ok (          $mol, $_ ), @methods;
 
 my $backbone = $mol->select_group('backbone');
-my $water    = $mol->select_group('water');
-my $sidechains= $mol->select_group('resname TYR .and. occ 1'); #  .and. resname TYR');
-$sidechains->print_pdb; exit;
-#$backbone->print_pdb;
-
-my $metals  = $mol->select_group('metals');
-my $ligands = $mol->select_group('ligands');
-$ligands->print_pdb;
+ok ($backbone->isa('HackaMol::AtomGroup'), 'select_group returns HackaMol::AtomGroup' );
+is ($backbone->natoms,1146, 'select_group("backbone")' );
+is ($mol->select_group('water')->natoms,258, 'select_group("water")' );
+is ($mol->select_group("sidechains")->natoms, 1556, 'select_group("sidechains")');
+is ($mol->select_group('resname TYR .and. occ 1')->natoms, $mol->select_group('resname TYR')->natoms, 'select_group("resname TYR .and. occ 1") returns same as select_group("resname TYR") because all TYR have 1.0 occ' ); #  .and. resname TYR');
+is ($mol->select_group('metals')->natoms, $mol->select_group('ligands')->natoms, 'select_group("metals") yields same as select_group("ligands") for 2sic'); 
 
 done_testing();
