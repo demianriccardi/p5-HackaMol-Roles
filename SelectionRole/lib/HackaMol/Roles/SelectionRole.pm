@@ -3,15 +3,18 @@ package HackaMol::Roles::SelectionRole;
 #ABSTRACT: Atom selections in molecules 
 use Moose::Role;
 use HackaMol::AtomGroup;
+use Scalar::Util qw(looks_like_number);
 use Carp;
 
 my %common_selections = (
-    'backbone'    => sub {$_->record_name eq 'ATOM' and ($_->name eq 'N' or $_->name eq 'CA' or $_->name eq 'C')},
-    'water'       => sub {$_->resname =~ m/HOH|TIP|H2O/ and $_->record_name eq 'HETATM' }, 
-    'protein'     => sub {$_->record_name eq 'ATOM'},
-    'ligands'     => sub {($_->resname !~ m/HOH|TIP|H2O/) and $_->record_name eq 'HETATM' }, 
-    'metals'      => sub {my $atom = $_; grep {$atom->Z == $_} (3,4,11,12,19 .. 30, 37 .. 48, 55 .. 80) },
-    'sidechains'  => sub {$_->record_name eq 'ATOM' and not ($_->name eq 'N' or $_->name eq 'CA' or $_->name eq 'C')}
+    'backbone'    => sub {grep { $_->record_name eq 'ATOM' and ($_->name eq 'N' or $_->name eq 'CA' or $_->name eq 'C')} @_},
+    'water'       => sub {grep {$_->resname =~ m/HOH|TIP|H2O/ and $_->record_name eq 'HETATM' } @_ }, 
+    'protein'     => sub {grep {$_->record_name eq 'ATOM'} @_ },
+    'ligands'     => sub {grep {($_->resname !~ m/HOH|TIP|H2O/) and $_->record_name eq 'HETATM' } @_}, 
+    'metals'      => sub {grep {my $atom = $_; grep {$atom->Z == $_} (3,4,11,12,19 .. 30, 37 .. 48, 55 .. 80) } @_ },
+    'sidechains'  => sub {grep {$_->record_name eq 'ATOM' and 
+                                not ($_->name eq 'N' or $_->name eq 'CA' or $_->name eq 'C')} @_},
+    'test'        => sub {grep {($_->chain eq 'E' or ($_->resname eq 'TYR' and $_->chain eq 'I')) and $_->occ <= 1.0} @_},
 );
 
 has 'selections' => (
@@ -38,13 +41,13 @@ sub select_group{
     $method = $common_selections{$selection};
   }
   else {
-    $method = _method($selection);
+    $method = _regex_method($selection);
   }
   #grep { &{ sub{ $_%2 } }($_)} 1..10
 
   my $group = HackaMol::AtomGroup->new( 
                         atoms=>[ 
-                          grep{&{$method}($_)}  $self->all_atoms 
+                          &{$method}($self->all_atoms) 
                         ],
   ); 
 
@@ -52,14 +55,22 @@ sub select_group{
 
 }
 
-sub _method{
-  my $str = shift;
-  print "$str not implemented yet"; return(sub{0});
-  my @ands = split ('.and.',$str);
-  my @ors  = map{[split ('.or.', $_)]}
-  my ($attr,$val) = split(' ', $str);
+# $mol->select_group('(chain A .or. (resname TYR .and. chain B)) .and. occ .within. 1')
+# becomes grep{($_->chain eq A or ($_->resname eq TYR and $_->chain eq 'B')) and $_->occ <= 1.0}
 
-  return $str;
+sub _regex_method{
+  my $str = shift;
+  #print "$str not implemented yet"; return(sub{0});
+  #my @parenth = $str =~ /(\(([^()]|(?R))*\))/g    
+
+  $str =~ s/(\w+)\s+([A-Za-z]+)/\$\_->$1 eq \'$2\'/g;
+  $str =~ s/(\w+)\s+(\d+)/\$\_->$1 == $2/g;
+  $str =~ s/(\w+)\s+\.within\.\s+(\d+)/\$\_->$1 <= $2/g;
+  $str =~ s/(\w+)\s+\.beyond\.\s+(\d+)/\$\_->$1 > $2/g;
+  $str =~ s/\.and\./and/g;
+  $str =~ s/\.or\./or/g;
+
+  return (eval( "sub{ grep{ $str } \@_ }" ) );
 }
 
 

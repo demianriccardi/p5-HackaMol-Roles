@@ -22,7 +22,7 @@ map can_ok (          $mol, $_ ), @methods;
 
 my $backbone = $mol->select_group('backbone');
 my $water    = $mol->select_group('water');
-my $sidechains= $mol->select_group('sidechains');
+my $sidechains= $mol->select_group('resname TYR .and. occ 1'); #  .and. resname TYR');
 $sidechains->print_pdb; exit;
 #$backbone->print_pdb;
 
