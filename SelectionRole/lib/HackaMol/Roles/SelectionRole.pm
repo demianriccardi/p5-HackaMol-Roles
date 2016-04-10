@@ -3,7 +3,6 @@ package HackaMol::Roles::SelectionRole;
 #ABSTRACT: Atom selections in molecules 
 use Moose::Role;
 use HackaMol::AtomGroup;
-use Scalar::Util qw(looks_like_number);
 use Carp;
 
 my %common_selections = (
