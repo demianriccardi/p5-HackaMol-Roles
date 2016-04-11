@@ -101,19 +101,25 @@ __END__
 =head1 DESCRIPTION
 
 The goal of HackaMol::Roles::SelectionRole is to simplify atom selections.  This role is not loaded with the core; it 
-must be applied as done above in the synopsis.  The main method is select_group, which uses regular expressions to convert 
+must be applied as done in the synopsis.  The method commonly used is select_group, which uses regular expressions to convert 
 a string argument to construct a method for filtering; a HackaMol::AtomGroup is returned. The select_group method operates 
-atoms contained within the object to which the role is applied (i.e. $self->all_atoms).  The role is envisioned for 
+on atoms contained within the object to which the role is applied (i.e. $self->all_atoms).  The role is envisioned for 
 instances of the HackaMol::Molecule class.
 
-Some common selections are included for convenience:  backbone, sidechains, protein, water, ligands, and metals.  For new 
-selections, the simplest selection will pair one attribute with one value separated by a space; for example, "chain E" will 
-split the string and return all those that match (atom->chain eq 'E').  This will work for any attribute (e.g. atom->Z == 8).
-Thus, 
+=head2 Common Selections: backbone, sidechains, protein, etc.
+
+Some common selections are included for convenience:  backbone, sidechains, protein, water, ligands, and metals.  
+
+    my $bb = $mol->select_group('backbone'); 
+
+=head2 Novel selections using strings: e.g. 'chain E', 'Z 8', 'chain E .and. Z 6'
+
+Strings are used for novel selections, the simplest selection being the pair of one attribute with one value separated by a space. 
+For example, "chain E" will split the string and return all those that match (atom->chain eq 'E').  
 
       my $enzyme = $mol->select_group('chain E');
 
-requires less perl know-how than the equivalent, 
+This will work for any attribute (e.g. atom->Z == 8). This approach requires less perl know-how than the equivalent, 
       
       my @enzyme_atoms = grep{$_->chain eq 'E'} $mol->all_atoms;
       my $enzyme = HackaMol::AtomGroup->new(atoms=>[@enzyme_atoms]); 
@@ -140,26 +146,33 @@ Parenthesis are also supported to allow selection precedence.
 
 3. To select all the tyrosines from chain E along with all the tyrosines from chain I,
 
-      my $TYR_AE = $mol->select_group('(resname TYR .and. chain E) .or. (resname TYR .and. chain I)');
+      my $TYR_EI = $mol->select_group('(resname TYR .and. chain E) .or. (resname TYR .and. chain I)');
 
 4. To select all atoms with occupancies between 0.5 and 0.95,
 
       my $occs = $mol->select_group('(occ .within. 0.95) .and. (occ .beyond. 0.5)');
 
-The common selections can also be used in the selections.  For example, select chain I but not the chain I water molecules
-(sometimes the water molecules get the chain id),
+The common selections (protein, water, backbone, sidechains) can also be used in the selections.  For example, select 
+chain I but not the chain I water molecules (sometimes the water molecules get the chain id),
 
       my $chain_I =  $mol->select_group('chain I .and. .not. water');
 
-The role also provides the an attribute with hash traits that can be used to create new selections.  For this hash, 
-the key will be a simple string ("sidechains") and the value will be an anonymous subroutine.  
+=head2 Extreme selections using code references. 
+
+The role also provides the an attribute with hash traits that can be used to create, insanely flexible, selections using code references. 
+As long as the code reference returns a list of atoms, you can do whatever you want.  For example, let's define a sidechains selection; the 
+key will be a simple string ("sidechains") and the value will be an anonymous subroutine.  
 For example,
 
-      $mol->set_selection_cr("sidechains" => sub {grep { $_->record_name eq 'ATOM' and not 
+      $mol->set_selection_cr("my_sidechains" => sub {grep { $_->record_name eq 'ATOM' and not 
                                                      ( $_->name eq 'N' or $_->name eq 'CA'
-                                                       or $_->name eq 'C')
+                                                       or $_->name eq 'C' or $_->name eq 'Flowers and sausages')
                                                     } @_ }
       );
+
+Now $mol->select_group('my_sidechains') will return a group corresponding to the selection defined above.  If you were to rename 
+"my_sidechains" to "sidechains", your "sidechains" would be loaded in place of the common selection "sidechains" because of the priority
+described below in the select_group method.  
 
 =attr selections_cr
 
@@ -175,7 +188,9 @@ two arguments: a string and a coderef
 
 =method select_group
 
-takes one argument (string) and returns a HackaMol::AtomGroup object containing the selected atoms. 
+takes one argument (string) and returns a HackaMol::AtomGroup object containing the selected atoms. Priority: the select_group method looks at 
+selections_cr first, then the common selections, and finally, if there were no known selections, it passes the argument to be processed
+using regular expressions.
 
 =head1 WARNING 
 
