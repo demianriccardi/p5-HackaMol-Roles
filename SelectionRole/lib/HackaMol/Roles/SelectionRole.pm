@@ -146,11 +146,16 @@ Parenthesis are also supported to allow selection precedence.
 
       my $occs = $mol->select_group('(occ .within. 0.95) .and. (occ .beyond. 0.5)');
 
+The common selections can also be used in the selections.  For example, select chain I but not the chain I water molecules
+(sometimes the water molecules get the chain id),
+
+      my $chain_I =  $mol->select_group('chain I .and. .not. water');
+
 The role also provides the an attribute with hash traits that can be used to create new selections.  For this hash, 
 the key will be a simple string ("sidechains") and the value will be an anonymous subroutine.  
 For example,
 
-      $mol->set_selection("sidechains" => sub {grep { $_->record_name eq 'ATOM' and not 
+      $mol->set_selection_cr("sidechains" => sub {grep { $_->record_name eq 'ATOM' and not 
                                                      ( $_->name eq 'N' or $_->name eq 'CA'
                                                        or $_->name eq 'C')
                                                     } @_ }
