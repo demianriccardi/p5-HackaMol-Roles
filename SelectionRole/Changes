@@ -1,0 +1,7 @@
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
+    * fixed dependencies
+    * added test for selection attributes
+    * selections renamed to selections_cr  to reflect coderef 
+
