@@ -68,6 +68,7 @@ sub _regex_method{
   $str =~ s/(\w+)\s+\.beyond\.\s+(\d+)/\$\_->$1 >= $2/g;
   $str =~ s/\.and\./and/g;
   $str =~ s/\.or\./or/g;
+  $str =~ s/\.not\./not/g;
 
   return (eval( "sub{ grep{ $str } \@_ }" ) );
 }
@@ -160,5 +161,6 @@ takes one argument (string) and returns a HackaMol::AtomGroup object containing 
 
 =head1 WARNING 
 
-This is still under active development and may change or just not work.  Let me know if you have problems or suggestions!
+This is still under active development and may change or just not work.  I still need to add warnings to help with bad 
+selections.  Let me know if you have problems or suggestions!
 
