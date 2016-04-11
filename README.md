@@ -1,18 +1,55 @@
 # p5-HackaMol-Roles
 
-This repo will contain all the roles for hackamol.
+This repository contains roles that can be applied to HackaMol objects, such as instances of HackaMol::Molecule or 
+included in new classes.   
 
 SelectionRole
 
-developing this outside the core for a change.
+
+#SYNOPSIS
+
+For modules that are installed from CPAN:
 
 ````perl
-    my $group = $mol->select_group("chain A .or. chain B");
-    my $group = $mol->select_group("chain A .and. resname TYR");
-    my $group = $mol->select_group("water");
-    my $group = $mol->select_group(".not. water");
-    my $group = $mol->select_group("protein");
-    my $group = $mol->select_group("sasa > 10");
+       use HackaMol;
+       use HackaMol::Roles::SomeSpecialRole;
+       use Moose::Util qw( ensure_all_roles ); #  to apply the role to the molecule object
+
+       my $mol = HackaMol->new->pdbid_mol("2sic"); #returns HackaMol::Molecule
+
+       ensure_all_roles($mol, 'HackaMol::Roles::SomeSpecialRole') # now $mol has new behaviors!
+
+       my $fancy_stuff = $mol->new_behavior(@args);
 ````
 
-This role will start simple and build from there
+To load a role from a file:
+
+````perl
+       use HackaMol;
+       use Module::Load;
+       use Moose::Util qw( ensure_all_roles ); #  to apply the role to the molecule object
+
+       load 'some/path/somespecialrole.pm';
+
+       my $mol = HackaMol->new->pdbid_mol("2sic"); #returns HackaMol::Molecule
+
+       ensure_all_roles($mol, 'HackaMol::Roles::SomeSpecialRole') # now $mol has new behaviors!
+
+       my $fancy_stuff = $mol->new_behavior(@args);
+```` 
+
+#RepoROLES
+
+  * SelectionRole
+
+# AUTHOR
+
+Demian Riccardi <demianriccardi@gmail.com>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2016 by Demian Riccardi.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
