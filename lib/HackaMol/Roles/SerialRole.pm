@@ -3,11 +3,6 @@ package HackaMol::Roles::SerialRole;
 #ABSTRACT: Role cloning and storing HackaMol objects
 use Moose::Role;
 use MooseX::Types::Path::Tiny qw/Path/;
-use Sereal::Encoder;
-use Sereal::Decoder;
-use CBOR::XS;
-use JSON::MaybeXS;
-use YAML::XS;
 use Carp;
 
 has 'serial_format',    is => 'rw', isa => 'Str' , lazy => 1, default => 'SEREAL';
@@ -29,12 +24,29 @@ sub freeze {
   }
   my $structure = shift;
 
-  return (Sereal::Encoder->new->encode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
-#  return (CBOR::XS->new->encode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
-#  return (JSON->new->encode ($structure))        if uc($self->serial_format) =~ m/JSON/;
-  return (YAML::XS::Dump ($structure))               if uc($self->serial_format) =~ m/YAML/;
+  if ( uc($self->serial_format) =~ m/SEREAL/ ) {
+    require Sereal::Encoder unless $INC{'Sereal/Encoder.pm'};
+    return (Sereal::Encoder->new->encode ($structure));
+  }
+
+  if ( uc($self->serial_format) =~ m/CBOR/ ) {
+    require CBOR::XS unless $INC{'CBOR/XS.pm'};
+    return (CBOR::XS->new->encode ($structure));
+  }
+
+  if ( uc($self->serial_format) =~ m/JSON/ ) {
+    require JSON::MaybeXS unless $INC{'JSON/MaybeXS.pm'};
+    return (JSON->new->encode ($structure));
+  }
+
+  if ( uc($self->serial_format) =~ m/YAML/ ) {
+    require YAML::XS unless $INC{'YAML/XS.pm'};
+    return (YAML::XS::Dump ($structure));
+  }
+
 
   carp "return 0; self.serial_format is not supported: ". $self->serial_format if $self->serial_carplevel;
+
   return (0);
 
 }
@@ -47,11 +59,26 @@ sub thaw {
     return (0);
   }
   my $structure = shift;
-  
-  return (Sereal::Decoder->new->decode ($structure)) if uc($self->serial_format) =~ m/SEREAL/;
-#  return (CBOR::XS->new->decode ($structure))        if uc($self->serial_format) =~ m/CBOR/;
-#  return (JSON->new->decode ($structure))        if uc($self->serial_format) =~ m/JSON/;
-  return (YAML::XS::Load ($structure))               if uc($self->serial_format) =~ m/YAML/;
+ 
+  if ( uc($self->serial_format) =~ m/SEREAL/ ) {
+    require Sereal::Decoder unless $INC{'Sereal/Decoder.pm'};
+    return (Sereal::Decoder->new->decode ($structure));
+  }
+
+  if ( uc($self->serial_format) =~ m/CBOR/ ) {
+    require CBOR::XS unless $INC{'CBOR/XS.pm'};
+    return (CBOR::XS->new->decode ($structure));
+  }
+
+  if ( uc($self->serial_format) =~ m/JSON/ ) {
+    require JSON::MaybeXS unless $INC{'JSON/MaybeXS.pm'};
+    return (JSON->new->decode ($structure));
+  }
+
+  if ( uc($self->serial_format) =~ m/YAML/ ) {
+    require YAML::XS unless $INC{'YAML/XS.pm'};
+    return (YAML::XS::Load ($structure));
+  } 
   
   carp "return 0; self.serial_format is not supported: ", $self->serial_format if $self->serial_carplevel;
   return (0);
