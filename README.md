@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 # p5-HackaMol-Roles
 
 This repository contains roles that can be applied to HackaMol objects, such as instances of 
 HackaMol::Molecule or included in new classes.   
 
-SelectionRole      ->    Released to CPAN
-SerialRole         ->    Not Released
+* SelectionRole      ->    https://metacpan.org/pod/HackaMol::Roles::SelectionRole
+* SerialRole         ->    Not Released yet
 
 #SYNOPSIS
 
