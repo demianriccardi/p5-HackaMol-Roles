@@ -1,0 +1,610 @@
+--- !!perl/hash:HackaMol::Molecule
+atoms:
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -0.312675
+    - 0.35671
+    - 2.385142
+  iatom: 0
+  name: at0
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -0.117301
+    - -0.379542
+    - -2.327947
+  iatom: 1
+  name: at1
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.325655
+    - -0.254388
+    - 0.502843
+  iatom: 2
+  name: at2
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -2.409786
+    - -0.157704
+    - -0.173515
+  iatom: 3
+  name: at3
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 0.42148
+    - 2.264676
+    - -0.338914
+  iatom: 4
+  name: at4
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 0.184239
+    - -2.462042
+    - 0.145927
+  iatom: 5
+  name: at5
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -0.019576
+    - -0.072473
+    - 0.047532
+  iatom: 6
+  name: at6
+  symbol: Hg
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -0.694762
+    - -0.394058
+    - 2.888843
+  iatom: 7
+  name: at7
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 0.522262
+    - 0.620686
+    - 2.828815
+  iatom: 8
+  name: at8
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 0.722076
+    - -0.416972
+    - -2.831972
+  iatom: 9
+  name: at9
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -0.752009
+    - 0.194351
+    - -2.805498
+  iatom: 10
+  name: at10
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.813376
+    - -0.879805
+    - -0.074626
+  iatom: 11
+  name: at11
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.84828
+    - 0.569713
+    - 0.57979
+  iatom: 12
+  name: at12
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -2.889661
+    - 0.655107
+    - -0.436363
+  iatom: 13
+  name: at13
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -2.922487
+    - -0.609178
+    - 0.529736
+  iatom: 14
+  name: at14
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -0.210307
+    - 2.774469
+    - -0.889381
+  iatom: 15
+  name: at15
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 0.632232
+    - 2.804307
+    - 0.453201
+  iatom: 16
+  name: at16
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -0.5376
+    - -2.972792
+    - 0.568445
+  iatom: 17
+  name: at17
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 0.380234
+    - -2.856278
+    - -0.728353
+  iatom: 18
+  name: at18
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 1.938074
+    - 1.534599
+    - 3.497722
+  iatom: 19
+  name: at19
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.693302
+    - -1.725233
+    - 3.623082
+  iatom: 20
+  name: at20
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.972673
+    - 1.359334
+    - -3.511418
+  iatom: 21
+  name: at21
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.204503
+    - -1.169322
+    - -3.540279
+  iatom: 22
+  name: at22
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 3.616457
+    - 2.026447
+    - 1.383123
+  iatom: 23
+  name: at23
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 3.536752
+    - -1.993956
+    - -1.299658
+  iatom: 24
+  name: at24
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -3.673625
+    - -1.715889
+    - 1.761267
+  iatom: 25
+  name: at25
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -3.584002
+    - 2.022927
+    - -1.38952
+  iatom: 26
+  name: at26
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 1.443439
+    - 3.634621
+    - 1.83111
+  iatom: 27
+  name: at27
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.411773
+    - 3.546525
+    - -1.997683
+  iatom: 28
+  name: at28
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 1.387907
+    - -3.43725
+    - -2.171969
+  iatom: 29
+  name: at29
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.780904
+    - -3.668468
+    - 1.700754
+  iatom: 30
+  name: at30
+  symbol: O
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.207144
+    - 1.460735
+    - 4.422702
+  iatom: 31
+  name: at31
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.784697
+    - -1.74919
+    - 4.585201
+  iatom: 32
+  name: at32
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -2.262994
+    - 1.216186
+    - -4.422328
+  iatom: 33
+  name: at33
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.584795
+    - -0.977193
+    - -4.406962
+  iatom: 34
+  name: at34
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 4.542718
+    - 2.286143
+    - 1.296273
+  iatom: 35
+  name: at35
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 4.41825
+    - -2.353326
+    - -1.132367
+  iatom: 36
+  name: at36
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -4.633644
+    - -1.826497
+    - 1.780958
+  iatom: 37
+  name: at37
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -4.50088
+    - 2.315309
+    - -1.304034
+  iatom: 38
+  name: at38
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 1.287947
+    - 4.556194
+    - 2.075028
+  iatom: 39
+  name: at39
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.272694
+    - 4.456195
+    - -2.293238
+  iatom: 40
+  name: at40
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 1.304193
+    - -4.323618
+    - -2.547424
+  iatom: 41
+  name: at41
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.795471
+    - -4.625543
+    - 1.836187
+  iatom: 42
+  name: at42
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.749132
+    - 1.467147
+    - 2.949873
+  iatom: 43
+  name: at43
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -2.58094
+    - -1.533556
+    - 3.249041
+  iatom: 44
+  name: at44
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -2.776252
+    - 1.353625
+    - -2.947873
+  iatom: 45
+  name: at45
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.943997
+    - -1.246687
+    - -2.90125
+  iatom: 46
+  name: at46
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 3.073556
+    - 2.838538
+    - 1.31201
+  iatom: 47
+  name: at47
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 2.927614
+    - -2.757469
+    - -1.409186
+  iatom: 48
+  name: at48
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -3.281279
+    - -2.589522
+    - 1.542883
+  iatom: 49
+  name: at49
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -3.015073
+    - 2.821641
+    - -1.387308
+  iatom: 50
+  name: at50
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 1.406218
+    - 3.099196
+    - 2.652537
+  iatom: 51
+  name: at51
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.421726
+    - 2.974878
+    - -2.796257
+  iatom: 52
+  name: at52
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - 1.418134
+    - -2.807043
+    - -2.920684
+  iatom: 53
+  name: at53
+  symbol: H
+  t: 0
+- !!perl/hash:HackaMol::Atom
+  bond_count: 0
+  coords:
+  - !!perl/array:Math::Vector::Real
+    - -1.532569
+    - -3.255262
+    - 2.555982
+  iatom: 54
+  name: at54
+  symbol: H
+  t: 0
+bonds: []
+name: t/lib/Hg.2-18w.xyz.mol
+t: 0
