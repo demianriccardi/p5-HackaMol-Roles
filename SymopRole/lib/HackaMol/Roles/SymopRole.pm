@@ -1,6 +1,6 @@
 package HackaMol::Roles::SymopRole;
 
-#ABSTRACT: Atom selections in molecules
+#ABSTRACT: Fill your coordinates using symmetry operations
 use Moose::Role;
 use Math::Vector::Real;
 use Carp;
@@ -43,113 +43,49 @@ no Moose::Role;
 
 __END__
 
+=head1 DESCRIPTION
+
+The goal of HackaMol::Roles::SymopRole is to simplify the application of 
+symmetry operations.  This role is not loaded with the core; it 
+must be applied as done in the synopsis.  This role is envisioned for 
+instances of the HackaMol class, which provides builder. 
+
 =head1 SYNOPSIS 
 
-       # load 2SIC from the the RCSB.org and pull out two groups: the enzyme (chain E) and  the inhibitor (chain I) 
+       ## Symmetry operations using copy and pasted from the PDB 
 
-       use HackaMol;
-       use Moose::Util qw( ensure_all_roles ); #  to apply the role to the molecule object
+       my $symops = '
+         REMARK 350 APPLY THE FOLLOWING TO CHAINS: A, B                                  
+         REMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000            
+         REMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000            
+         REMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000            
+         REMARK 350   BIOMT1   2 -1.000000  0.000000  0.000000     -125.59400            
+         REMARK 350   BIOMT2   2  0.000000 -1.000000  0.000000     -125.48300            
+         REMARK 350   BIOMT3   2  0.000000  0.000000  1.000000        0.00000    
+       '; # from pdb
 
-       my $mol = HackaMol->new->pdbid_mol("2sic"); #returns HackaMol::Molecule
+       say $mol->tmax ; # says 0
 
-       ensure_all_roles($mol, 'HackaMol::Roles::SelectionRole') # now $mol has the select_group method;
+       $bldr->apply_pdbstr_symops($symops,$mol);  # will add coordinates for each, even the identity op (the first three)
+
+       $mol->tmax ;     # says 2
+
+
 
        my $enzyme = $mol->select_group("chain E");
        my $inhib  = $mol->select_group("chain I");
 
-=head1 DESCRIPTION
 
-The goal of HackaMol::Roles::SelectionRole is to simplify atom selections.  This role is not loaded with the core; it 
-must be applied as done in the synopsis.  The method commonly used is select_group, which uses regular expressions to convert 
-a string argument to construct a method for filtering; a HackaMol::AtomGroup is returned. The select_group method operates 
-on atoms contained within the object to which the role is applied (i.e. $self->all_atoms).  The role is envisioned for 
-instances of the HackaMol::Molecule class.
+=method apply_pdbstr_symops 
 
-=head2 Common Selections: backbone, sidechains, protein, etc.
+takes two arguments: 
 
-Some common selections are included for convenience:  backbone, sidechains, protein, water, ligands, and metals.  
+      1. a string with one or more symmetry operations.  As the name of the method suggests, the method works for strings formatted as in a
+         typical protein databank file.  It will filter for lines containing the SMTRY or BIOMT pattern.
 
-    my $bb = $mol->select_group('backbone'); 
+      2. the molecule with the initial coordinates
 
-=head2 Novel selections using strings: e.g. 'chain E', 'Z 8', 'chain E .and. Z 6'
-
-Strings are used for novel selections, the simplest selection being the pair of one attribute with one value separated by a space. 
-For example, "chain E" will split the string and return all those that match (atom->chain eq 'E').  
-
-      my $enzyme = $mol->select_group('chain E');
-
-This will work for any attribute (e.g. atom->Z == 8). This approach requires less perl know-how than the equivalent, 
-      
-      my @enzyme_atoms = grep{$_->chain eq 'E'} $mol->all_atoms;
-      my $enzyme = HackaMol::AtomGroup->new(atoms=>[@enzyme_atoms]); 
-
-More complex selections are also straightforward using the following operators:
-
-      .or.         matches if an atom satisfies either selection (separated by .or.)
-      .and.        matches if an atom satisfies both selections (separated by .and.)             
-      .within.     less than or equal to for numeric attributes
-      .beyond.     greater than or equal to for numeric attributes
-      .not.        everything but
-
-More, such as .around. will be added as needs arise. Let's take a couple of examples. 
-
-1. To select all the tyrosines from chain E,
-
-      my $TYR_E = $mol->select_group('chain E .and. resname TYR');
-
-2. To choose both chain E and chain I,
-
-      my $two_chains = $mol->select_group('chain E .or. chain I');
-
-Parenthesis are also supported to allow selection precedence.  
-
-3. To select all the tyrosines from chain E along with all the tyrosines from chain I,
-
-      my $TYR_EI = $mol->select_group('(resname TYR .and. chain E) .or. (resname TYR .and. chain I)');
-
-4. To select all atoms with occupancies between 0.5 and 0.95,
-
-      my $occs = $mol->select_group('(occ .within. 0.95) .and. (occ .beyond. 0.5)');
-
-The common selections (protein, water, backbone, sidechains) can also be used in the selections.  For example, select 
-chain I but not the chain I water molecules (sometimes the water molecules get the chain id),
-
-      my $chain_I =  $mol->select_group('chain I .and. .not. water');
-
-=head2 Extreme selections using code references. 
-
-The role also provides the an attribute with hash traits that can be used to create, insanely flexible, selections using code references. 
-As long as the code reference returns a list of atoms, you can do whatever you want.  For example, let's define a sidechains selection; the 
-key will be a simple string ("sidechains") and the value will be an anonymous subroutine.  
-For example,
-
-      $mol->set_selection_cr("my_sidechains" => sub {grep { $_->record_name eq 'ATOM' and not 
-                                                     ( $_->name eq 'N' or $_->name eq 'CA'
-                                                       or $_->name eq 'C' or $_->name eq 'Flowers and sausages')
-                                                    } @_ }
-      );
-
-Now $mol->select_group('my_sidechains') will return a group corresponding to the selection defined above.  If you were to rename 
-"my_sidechains" to "sidechains", your "sidechains" would be loaded in place of the common selection "sidechains" because of the priority
-described below in the select_group method.  
-
-=attr selections_cr
-
-isa HashRef[CodeRef] that is lazy with public Hash traits.  This attribute allows the user to use code references in the atom selections.
-The list of atoms, contained in the role consuming object, will be passed to the code reference, and a list of atoms is the expected output
-of the code reference, e.g.
-
-    @new_atoms = &{$code_ref}(@atoms);
-
-=method set_selections_cr
-
-two arguments: a string and a coderef
-
-=method select_group
-
-takes one argument (string) and returns a HackaMol::AtomGroup object containing the selected atoms. Priority: the select_group method looks at 
-selections_cr first, then the common selections, and finally, if there were no known selections, it passes the argument to be processed
-using regular expressions.
+The method applies the symmetry operators and adds the coordinates to each atom of the molecule.
 
 =head1 WARNING 
 
