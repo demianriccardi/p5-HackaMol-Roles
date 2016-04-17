@@ -27,7 +27,7 @@ instances of the HackaMol class, which provides builder.
 
      say $mol->tmax ; # says 0
 
-     $bldr->apply_string_symops($mol,$symops);  # will add coordinates for each, even the identity op (the first three)
+     $bldr->apply_string_symops($symops,$mol);  # will add coordinates for each, even the identity op (the first three)
 
      $mol->tmax ;     # says 2
     
