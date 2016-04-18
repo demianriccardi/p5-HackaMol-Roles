@@ -29,13 +29,14 @@ sub kmeans {
       Math::Vector::Real::kdTree->new( map { $_->xyz } $mol->all_atoms );
     my @means;
 
-    while ($ki) {
-        @means = $tree->k_means_start($ki);
+    while ($nbeads) {
+        @means = $tree->k_means_start($nbeads);
         @means = $tree->k_means_loop(@means);
         my @ineigh = Math::Vector::Real::Neighbors->neighbors(@means);
-        @dist = map { $means[$_]->dist( $means[ $ineigh[$_] ] ) } 0 .. $#ineigh;
+        my @dist =
+          map { $means[$_]->dist( $means[ $ineigh[$_] ] ) } 0 .. $#ineigh;
         if ( grep { $_ < $rcut } @dist ) {
-            $ki--;
+            $nbeads--;
             next;
         }
         else {
