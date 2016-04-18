@@ -5,7 +5,7 @@ use Moose::Role;
 use Math::Vector::Real;
 use Carp;
 
-sub apply_string_symops {
+sub apply_pdbstr_symops {
 
   my $self   = shift;
   my $symops = shift;
@@ -14,7 +14,8 @@ sub apply_string_symops {
   my $t = $mol->tmax+1;
 
   my %sym_op = (); # a hash to store them!
-  foreach my $line ( grep {m/BIOMT|SMTRY/} split( '\n' , $symops ) ){
+  #this regex may be general enough to work on entire pdb
+  foreach my $line ( grep { m/REMARK 350\s+(BIOMT|SMTRY)\d+\s+\d+/ } split( '\n' , $symops ) ){
     my @entries = split(' ', $line);
     push @{$sym_op{$entries[3]}}, V(@entries[4,5,6,7]);
   }
@@ -69,7 +70,6 @@ instances of the HackaMol class, which provides builder.
        $bldr->apply_pdbstr_symops($symops,$mol);  # will add coordinates for each, even the identity op (the first three)
 
        $mol->tmax ;     # says 2
-
 
 
        my $enzyme = $mol->select_group("chain E");
