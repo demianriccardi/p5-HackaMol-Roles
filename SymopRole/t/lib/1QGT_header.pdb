@@ -1,0 +1,761 @@
+HEADER    VIRUS                                   05-MAY-99   1QGT              
+TITLE     HUMAN HEPATITIS B VIRAL CAPSID (HBCAG)                                
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: PROTEIN (HBV CAPSID PROTEIN);                              
+COMPND   3 CHAIN: C, D, B, A;                                                   
+COMPND   4 FRAGMENT: ASSEMBLY DOMAIN;                                           
+COMPND   5 SYNONYM: HBCAG;                                                      
+COMPND   6 ENGINEERED: YES                                                      
+SOURCE    MOL_ID: 1;                                                            
+SOURCE   2 ORGANISM_SCIENTIFIC: HEPATITIS B VIRUS;                              
+SOURCE   3 ORGANISM_TAXID: 10407;                                               
+SOURCE   4 STRAIN: ISOLATED AT ST MARY'S HOSPITAL, LONDON;                      
+SOURCE   5 EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21(DE3);                       
+SOURCE   6 EXPRESSION_SYSTEM_TAXID: 469008;                                     
+SOURCE   7 EXPRESSION_SYSTEM_STRAIN: BL21(DE3);                                 
+SOURCE   8 EXPRESSION_SYSTEM_PLASMID: PT7-SC;                                   
+SOURCE   9 OTHER_DETAILS: THE CONSTRUCT WAS TRUNCATED AFTER RESIDUE             
+SOURCE  10 149                                                                  
+KEYWDS    VIRAL CAPSID PROTEIN, ICOSAHEDRAL VIRUS                               
+EXPDTA    X-RAY DIFFRACTION                                                     
+AUTHOR    A.G.W.LESLIE,S.A.WYNNE,R.A.CROWTHER                                   
+REVDAT   3   24-FEB-09 1QGT    1       VERSN                                    
+REVDAT   2   01-APR-03 1QGT    1       JRNL                                     
+REVDAT   1   25-JUN-99 1QGT    0                                                
+JRNL        AUTH   S.A.WYNNE,R.A.CROWTHER,A.G.LESLIE                            
+JRNL        TITL   THE CRYSTAL STRUCTURE OF THE HUMAN HEPATITIS B               
+JRNL        TITL 2 VIRUS CAPSID.                                                
+JRNL        REF    MOL.CELL                      V.   3   771 1999              
+JRNL        REFN                   ISSN 1097-2765                               
+JRNL        PMID   10394365                                                     
+JRNL        DOI    10.1016/S1097-2765(01)80009-5                                
+REMARK   1                                                                      
+REMARK   1 REFERENCE 1                                                          
+REMARK   1  AUTH   S.A.WYNNE,A.G.W.LESLIE,P.J.G.BUTLER,R.A.CROWTHER             
+REMARK   1  TITL   CRYSTALLIZATION OF HEPATITIS B VIRUS CORE PROTEIN            
+REMARK   1  TITL 2 SHELLS: DETERMINATION OF CRYOPROTECTANT CONDITIONS           
+REMARK   1  TITL 3 AND PRELIMINARY X-RAY CHARACTERIZATION                       
+REMARK   1  REF    ACTA CRYSTALLOGR.,SECT.D      V. D55   557 1999              
+REMARK   1  REFN                   ISSN 0907-4449                               
+REMARK   1  DOI    10.1107/S0907444998012621                                    
+REMARK   2                                                                      
+REMARK   2 RESOLUTION.    3.30 ANGSTROMS.                                       
+REMARK   3                                                                      
+REMARK   3 REFINEMENT.                                                          
+REMARK   3   PROGRAM     : X-PLOR 3.851                                         
+REMARK   3   AUTHORS     : BRUNGER                                              
+REMARK   3                                                                      
+REMARK   3  DATA USED IN REFINEMENT.                                            
+REMARK   3   RESOLUTION RANGE HIGH (ANGSTROMS) : 3.30                           
+REMARK   3   RESOLUTION RANGE LOW  (ANGSTROMS) : 8.00                           
+REMARK   3   DATA CUTOFF            (SIGMA(F)) : 0.000                          
+REMARK   3   DATA CUTOFF HIGH         (ABS(F)) : 0.000                          
+REMARK   3   DATA CUTOFF LOW          (ABS(F)) : 0.0000                         
+REMARK   3   COMPLETENESS (WORKING+TEST)   (%) : 94.2                           
+REMARK   3   NUMBER OF REFLECTIONS             : 649882                         
+REMARK   3                                                                      
+REMARK   3  FIT TO DATA USED IN REFINEMENT.                                     
+REMARK   3   CROSS-VALIDATION METHOD          : NULL                            
+REMARK   3   FREE R VALUE TEST SET SELECTION  : NULL                            
+REMARK   3   R VALUE            (WORKING SET) : 0.271                           
+REMARK   3   FREE R VALUE                     : NULL                            
+REMARK   3   FREE R VALUE TEST SET SIZE   (%) : NULL                            
+REMARK   3   FREE R VALUE TEST SET COUNT      : NULL                            
+REMARK   3   ESTIMATED ERROR OF FREE R VALUE  : NULL                            
+REMARK   3                                                                      
+REMARK   3  FIT IN THE HIGHEST RESOLUTION BIN.                                  
+REMARK   3   TOTAL NUMBER OF BINS USED           : 8                            
+REMARK   3   BIN RESOLUTION RANGE HIGH       (A) : 3.30                         
+REMARK   3   BIN RESOLUTION RANGE LOW        (A) : 3.44                         
+REMARK   3   BIN COMPLETENESS (WORKING+TEST) (%) : NULL                         
+REMARK   3   REFLECTIONS IN BIN    (WORKING SET) : 59490                        
+REMARK   3   BIN R VALUE           (WORKING SET) : 0.4480                       
+REMARK   3   BIN FREE R VALUE                    : NULL                         
+REMARK   3   BIN FREE R VALUE TEST SET SIZE  (%) : NULL                         
+REMARK   3   BIN FREE R VALUE TEST SET COUNT     : NULL                         
+REMARK   3   ESTIMATED ERROR OF BIN FREE R VALUE : NULL                         
+REMARK   3                                                                      
+REMARK   3  NUMBER OF NON-HYDROGEN ATOMS USED IN REFINEMENT.                    
+REMARK   3   PROTEIN ATOMS            : 4560                                    
+REMARK   3   NUCLEIC ACID ATOMS       : 0                                       
+REMARK   3   HETEROGEN ATOMS          : 0                                       
+REMARK   3   SOLVENT ATOMS            : 0                                       
+REMARK   3                                                                      
+REMARK   3  B VALUES.                                                           
+REMARK   3   FROM WILSON PLOT           (A**2) : 59.00                          
+REMARK   3   MEAN B VALUE      (OVERALL, A**2) : 54.00                          
+REMARK   3   OVERALL ANISOTROPIC B VALUE.                                       
+REMARK   3    B11 (A**2) : NULL                                                 
+REMARK   3    B22 (A**2) : NULL                                                 
+REMARK   3    B33 (A**2) : NULL                                                 
+REMARK   3    B12 (A**2) : NULL                                                 
+REMARK   3    B13 (A**2) : NULL                                                 
+REMARK   3    B23 (A**2) : NULL                                                 
+REMARK   3                                                                      
+REMARK   3  ESTIMATED COORDINATE ERROR.                                         
+REMARK   3   ESD FROM LUZZATI PLOT        (A) : NULL                            
+REMARK   3   ESD FROM SIGMAA              (A) : NULL                            
+REMARK   3   LOW RESOLUTION CUTOFF        (A) : NULL                            
+REMARK   3                                                                      
+REMARK   3  CROSS-VALIDATED ESTIMATED COORDINATE ERROR.                         
+REMARK   3   ESD FROM C-V LUZZATI PLOT    (A) : NULL                            
+REMARK   3   ESD FROM C-V SIGMAA          (A) : NULL                            
+REMARK   3                                                                      
+REMARK   3  RMS DEVIATIONS FROM IDEAL VALUES.                                   
+REMARK   3   BOND LENGTHS                 (A) : 0.016                           
+REMARK   3   BOND ANGLES            (DEGREES) : 2.02                            
+REMARK   3   DIHEDRAL ANGLES        (DEGREES) : 24.80                           
+REMARK   3   IMPROPER ANGLES        (DEGREES) : 0.90                            
+REMARK   3                                                                      
+REMARK   3  ISOTROPIC THERMAL MODEL : GROUP B'S                                 
+REMARK   3                                                                      
+REMARK   3  ISOTROPIC THERMAL FACTOR RESTRAINTS.    RMS    SIGMA                
+REMARK   3   MAIN-CHAIN BOND              (A**2) : NULL  ; NULL                 
+REMARK   3   MAIN-CHAIN ANGLE             (A**2) : NULL  ; NULL                 
+REMARK   3   SIDE-CHAIN BOND              (A**2) : NULL  ; NULL                 
+REMARK   3   SIDE-CHAIN ANGLE             (A**2) : NULL  ; NULL                 
+REMARK   3                                                                      
+REMARK   3  NCS MODEL : CONSTRAINTS                                             
+REMARK   3                                                                      
+REMARK   3  NCS RESTRAINTS.                         RMS   SIGMA/WEIGHT          
+REMARK   3   GROUP  1  POSITIONAL            (A) : NULL  ; NULL                 
+REMARK   3   GROUP  1  B-FACTOR           (A**2) : NULL  ; NULL                 
+REMARK   3                                                                      
+REMARK   3  PARAMETER FILE  1  : PARHCSDX.PRO                                   
+REMARK   3  PARAMETER FILE  2  : NULL                                           
+REMARK   3  TOPOLOGY FILE  1   : TOPHCSDX.PRO                                   
+REMARK   3  TOPOLOGY FILE  2   : NULL                                           
+REMARK   3                                                                      
+REMARK   3  OTHER REFINEMENT REMARKS: STRICT ICOSAHEDRAL SYMMETRY IMPOSED       
+REMARK   4                                                                      
+REMARK   4 1QGT COMPLIES WITH FORMAT V. 3.15, 01-DEC-08                         
+REMARK 100                                                                      
+REMARK 100 THIS ENTRY HAS BEEN PROCESSED BY NDB  ON 11-MAY-99.                  
+REMARK 100 THE RCSB ID CODE IS RCSB001002.                                      
+REMARK 200                                                                      
+REMARK 200 EXPERIMENTAL DETAILS                                                 
+REMARK 200  EXPERIMENT TYPE                : X-RAY DIFFRACTION                  
+REMARK 200  DATE OF DATA COLLECTION        : JAN-98                             
+REMARK 200  TEMPERATURE           (KELVIN) : 100                                
+REMARK 200  PH                             : 6.5                                
+REMARK 200  NUMBER OF CRYSTALS USED        : 20                                 
+REMARK 200                                                                      
+REMARK 200  SYNCHROTRON              (Y/N) : Y                                  
+REMARK 200  RADIATION SOURCE               : ESRF                               
+REMARK 200  BEAMLINE                       : ID2                                
+REMARK 200  X-RAY GENERATOR MODEL          : NULL                               
+REMARK 200  MONOCHROMATIC OR LAUE    (M/L) : M                                  
+REMARK 200  WAVELENGTH OR RANGE        (A) : 0.99188                            
+REMARK 200  MONOCHROMATOR                  : NULL                               
+REMARK 200  OPTICS                         : NULL                               
+REMARK 200                                                                      
+REMARK 200  DETECTOR TYPE                  : IMAGE PLATE                        
+REMARK 200  DETECTOR MANUFACTURER          : MAR SCANNER 345 MM PLATE           
+REMARK 200  INTENSITY-INTEGRATION SOFTWARE : MOSFLM                             
+REMARK 200  DATA SCALING SOFTWARE          : CCP4 (SCALA)                       
+REMARK 200                                                                      
+REMARK 200  NUMBER OF UNIQUE REFLECTIONS   : 727106                             
+REMARK 200  RESOLUTION RANGE HIGH      (A) : 3.300                              
+REMARK 200  RESOLUTION RANGE LOW       (A) : 38.800                             
+REMARK 200  REJECTION CRITERIA  (SIGMA(I)) : NULL                               
+REMARK 200                                                                      
+REMARK 200 OVERALL.                                                             
+REMARK 200  COMPLETENESS FOR RANGE     (%) : 94.9                               
+REMARK 200  DATA REDUNDANCY                : 2.900                              
+REMARK 200  R MERGE                    (I) : 0.15300                            
+REMARK 200  R SYM                      (I) : NULL                               
+REMARK 200  <I/SIGMA(I)> FOR THE DATA SET  : 6.4000                             
+REMARK 200                                                                      
+REMARK 200 IN THE HIGHEST RESOLUTION SHELL.                                     
+REMARK 200  HIGHEST RESOLUTION SHELL, RANGE HIGH (A) : 3.30                     
+REMARK 200  HIGHEST RESOLUTION SHELL, RANGE LOW  (A) : 3.48                     
+REMARK 200  COMPLETENESS FOR SHELL     (%) : 78.2                               
+REMARK 200  DATA REDUNDANCY IN SHELL       : 2.00                               
+REMARK 200  R MERGE FOR SHELL          (I) : 0.78200                            
+REMARK 200  R SYM FOR SHELL            (I) : NULL                               
+REMARK 200  <I/SIGMA(I)> FOR SHELL         : 0.900                              
+REMARK 200                                                                      
+REMARK 200 DIFFRACTION PROTOCOL: SINGLE WAVELENGTH                              
+REMARK 200 METHOD USED TO DETERMINE THE STRUCTURE: OTHER                        
+REMARK 200 SOFTWARE USED: CCP4, SOLOMON, SIGMAA                                 
+REMARK 200 STARTING MODEL: NULL                                                 
+REMARK 200                                                                      
+REMARK 200 REMARK: NULL                                                         
+REMARK 280                                                                      
+REMARK 280 CRYSTAL                                                              
+REMARK 280 SOLVENT CONTENT, VS   (%): 82.00                                     
+REMARK 280 MATTHEWS COEFFICIENT, VM (ANGSTROMS**3/DA): NULL                     
+REMARK 280                                                                      
+REMARK 280 CRYSTALLIZATION CONDITIONS: EQUAL VOLUMES OF PROTEIN (15MG/ML)       
+REMARK 280  IN 5MM TRIS-HCL, 150MM NACL PH7.5 AND 0.1M MES, PH 6.5, 0.1-        
+REMARK 280  0.4M (NH4)2SO4, 3.5-4% PEG20000 AND 20% BUTANEDIOL. HANGING         
+REMARK 280  DROP                                                                
+REMARK 290                                                                      
+REMARK 290 CRYSTALLOGRAPHIC SYMMETRY                                            
+REMARK 290 SYMMETRY OPERATORS FOR SPACE GROUP: C 1 2 1                          
+REMARK 290                                                                      
+REMARK 290      SYMOP   SYMMETRY                                                
+REMARK 290     NNNMMM   OPERATOR                                                
+REMARK 290       1555   X,Y,Z                                                   
+REMARK 290       2555   -X,Y,-Z                                                 
+REMARK 290       3555   X+1/2,Y+1/2,Z                                           
+REMARK 290       4555   -X+1/2,Y+1/2,-Z                                         
+REMARK 290                                                                      
+REMARK 290     WHERE NNN -> OPERATOR NUMBER                                     
+REMARK 290           MMM -> TRANSLATION VECTOR                                  
+REMARK 290                                                                      
+REMARK 290 CRYSTALLOGRAPHIC SYMMETRY TRANSFORMATIONS                            
+REMARK 290 THE FOLLOWING TRANSFORMATIONS OPERATE ON THE ATOM/HETATM             
+REMARK 290 RECORDS IN THIS ENTRY TO PRODUCE CRYSTALLOGRAPHICALLY                
+REMARK 290 RELATED MOLECULES.                                                   
+REMARK 290   SMTRY1   1  1.000000  0.000000  0.000000        0.00000            
+REMARK 290   SMTRY2   1  0.000000  1.000000  0.000000        0.00000            
+REMARK 290   SMTRY3   1  0.000000  0.000000  1.000000        0.00000            
+REMARK 290   SMTRY1   2 -1.000000  0.000000  0.000000        0.00000            
+REMARK 290   SMTRY2   2  0.000000  1.000000  0.000000        0.00000            
+REMARK 290   SMTRY3   2  0.000000  0.000000 -1.000000        0.00000            
+REMARK 290   SMTRY1   3  1.000000  0.000000  0.000000      269.20000            
+REMARK 290   SMTRY2   3  0.000000  1.000000  0.000000      177.40000            
+REMARK 290   SMTRY3   3  0.000000  0.000000  1.000000        0.00000            
+REMARK 290   SMTRY1   4 -1.000000  0.000000  0.000000      269.20000            
+REMARK 290   SMTRY2   4  0.000000  1.000000  0.000000      177.40000            
+REMARK 290   SMTRY3   4  0.000000  0.000000 -1.000000        0.00000            
+REMARK 290                                                                      
+REMARK 290 REMARK: NULL                                                         
+REMARK 300                                                                      
+REMARK 300 BIOMOLECULE: 1                                                       
+REMARK 300 SEE REMARK 350 FOR THE AUTHOR PROVIDED AND/OR PROGRAM                
+REMARK 300 GENERATED ASSEMBLY INFORMATION FOR THE STRUCTURE IN                  
+REMARK 300 THIS ENTRY. THE REMARK MAY ALSO PROVIDE INFORMATION ON               
+REMARK 300 BURIED SURFACE AREA.                                                 
+REMARK 300 THE ASSEMBLY REPRESENTED IN THIS ENTRY HAS REGULAR                   
+REMARK 300 ICOSAHEDRAL POINT SYMMETRY (SCHOENFLIES SYMBOL = I).                 
+REMARK 350                                                                      
+REMARK 350 COORDINATES FOR A COMPLETE MULTIMER REPRESENTING THE KNOWN           
+REMARK 350 BIOLOGICALLY SIGNIFICANT OLIGOMERIZATION STATE OF THE                
+REMARK 350 MOLECULE CAN BE GENERATED BY APPLYING BIOMT TRANSFORMATIONS          
+REMARK 350 GIVEN BELOW.  BOTH NON-CRYSTALLOGRAPHIC AND                          
+REMARK 350 CRYSTALLOGRAPHIC OPERATIONS ARE GIVEN.                               
+REMARK 350                                                                      
+REMARK 350 BIOMOLECULE: 1                                                       
+REMARK 350 APPLY THE FOLLOWING TO CHAINS: C, D, B, A                            
+REMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000            
+REMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000            
+REMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000            
+REMARK 350   BIOMT1   2  0.458930 -0.507750  0.729091        0.00000            
+REMARK 350   BIOMT2   2  0.846163  0.500000 -0.184413        0.00000            
+REMARK 350   BIOMT3   2 -0.270909  0.701562  0.659104        0.00000            
+REMARK 350   BIOMT1   3 -0.416540  0.024606  0.908784        0.00000            
+REMARK 350   BIOMT2   3  0.861370 -0.309017  0.403175        0.00000            
+REMARK 350   BIOMT3   3  0.290750  0.950738  0.107523        0.00000            
+REMARK 350   BIOMT1   4 -0.416540  0.861370  0.290750        0.00000            
+REMARK 350   BIOMT2   4  0.024606 -0.309017  0.950738        0.00000            
+REMARK 350   BIOMT3   4  0.908784  0.403175  0.107523        0.00000            
+REMARK 350   BIOMT1   5  0.458930  0.846163 -0.270909        0.00000            
+REMARK 350   BIOMT2   5 -0.507750  0.500000  0.701562        0.00000            
+REMARK 350   BIOMT3   5  0.729091 -0.184413  0.659104        0.00000            
+REMARK 350   BIOMT1   6  0.483917  0.532356  0.694566        0.00000            
+REMARK 350   BIOMT2   6  0.532356 -0.809017  0.249176        0.00000            
+REMARK 350   BIOMT3   6  0.694566  0.249176 -0.674900        0.00000            
+REMARK 350   BIOMT1   7  0.484379  0.507750  0.712437        0.00000            
+REMARK 350   BIOMT2   7 -0.507750 -0.500000  0.701562        0.00000            
+REMARK 350   BIOMT3   7  0.712437 -0.701562  0.015621        0.00000            
+REMARK 350   BIOMT1   8  0.458930  0.507750  0.729091        0.00000            
+REMARK 350   BIOMT2   8 -0.846163  0.500000  0.184414        0.00000            
+REMARK 350   BIOMT3   8 -0.270909 -0.701562  0.659104        0.00000            
+REMARK 350   BIOMT1   9  0.442738  0.532356  0.721512        0.00000            
+REMARK 350   BIOMT2   9 -0.015207  0.809017 -0.587588        0.00000            
+REMARK 350   BIOMT3   9 -0.896522  0.249176  0.366279        0.00000            
+REMARK 350   BIOMT1  10  0.458181  0.547563  0.700175        0.00000            
+REMARK 350   BIOMT2  10  0.836764  0.000000 -0.547563        0.00000            
+REMARK 350   BIOMT3  10 -0.299826  0.836764 -0.458181        0.00000            
+REMARK 350   BIOMT1  11 -0.484379 -0.507750 -0.712437        0.00000            
+REMARK 350   BIOMT2  11 -0.507750 -0.500000  0.701562        0.00000            
+REMARK 350   BIOMT3  11 -0.712437  0.701562 -0.015621        0.00000            
+REMARK 350   BIOMT1  12 -0.458930 -0.507750 -0.729091        0.00000            
+REMARK 350   BIOMT2  12 -0.846163  0.500000  0.184413        0.00000            
+REMARK 350   BIOMT3  12  0.270909  0.701562 -0.659104        0.00000            
+REMARK 350   BIOMT1  13 -0.442738 -0.532356 -0.721512        0.00000            
+REMARK 350   BIOMT2  13 -0.015207  0.809017 -0.587589        0.00000            
+REMARK 350   BIOMT3  13  0.896522 -0.249176 -0.366279        0.00000            
+REMARK 350   BIOMT1  14 -0.458181 -0.547563 -0.700174        0.00000            
+REMARK 350   BIOMT2  14  0.836764 -0.000000 -0.547563        0.00000            
+REMARK 350   BIOMT3  14  0.299825 -0.836764  0.458181        0.00000            
+REMARK 350   BIOMT1  15 -0.483917 -0.532356 -0.694566        0.00000            
+REMARK 350   BIOMT2  15  0.532356 -0.809017  0.249176        0.00000            
+REMARK 350   BIOMT3  15 -0.694566 -0.249176  0.674900        0.00000            
+REMARK 350   BIOMT1  16 -0.999537 -0.024606  0.017871        0.00000            
+REMARK 350   BIOMT2  16 -0.024606  0.309017 -0.950738        0.00000            
+REMARK 350   BIOMT3  16  0.017871 -0.950738 -0.309479        0.00000            
+REMARK 350   BIOMT1  17 -0.484379  0.507750 -0.712437        0.00000            
+REMARK 350   BIOMT2  17  0.507750 -0.500000 -0.701562        0.00000            
+REMARK 350   BIOMT3  17 -0.712437 -0.701562 -0.015621        0.00000            
+REMARK 350   BIOMT1  18  0.400349  0.000000 -0.916363        0.00000            
+REMARK 350   BIOMT2  18  0.000000 -1.000000 -0.000000        0.00000            
+REMARK 350   BIOMT3  18 -0.916363 -0.000000 -0.400349        0.00000            
+REMARK 350   BIOMT1  19  0.431983 -0.846163 -0.312088        0.00000            
+REMARK 350   BIOMT2  19 -0.846163 -0.500000  0.184414        0.00000            
+REMARK 350   BIOMT3  19 -0.312088  0.184414 -0.931983        0.00000            
+REMARK 350   BIOMT1  20 -0.433194 -0.861370  0.265301        0.00000            
+REMARK 350   BIOMT2  20 -0.861370  0.309017 -0.403175        0.00000            
+REMARK 350   BIOMT3  20  0.265301 -0.403175 -0.875823        0.00000            
+REMARK 350   BIOMT1  21 -0.442738  0.015207  0.896522        0.00000            
+REMARK 350   BIOMT2  21  0.532356  0.809017  0.249176        0.00000            
+REMARK 350   BIOMT3  21 -0.721512  0.587588 -0.366279        0.00000            
+REMARK 350   BIOMT1  22 -0.433194  0.861370  0.265300        0.00000            
+REMARK 350   BIOMT2  22  0.861370  0.309017  0.403175        0.00000            
+REMARK 350   BIOMT3  22  0.265300  0.403175 -0.875823        0.00000            
+REMARK 350   BIOMT1  23  0.458181  0.836764 -0.299826        0.00000            
+REMARK 350   BIOMT2  23  0.547563  0.000000  0.836764        0.00000            
+REMARK 350   BIOMT3  23  0.700175 -0.547563 -0.458181        0.00000            
+REMARK 350   BIOMT1  24  0.999537 -0.024606 -0.017871        0.00000            
+REMARK 350   BIOMT2  24  0.024606  0.309017  0.950738        0.00000            
+REMARK 350   BIOMT3  24 -0.017871 -0.950738  0.309480        0.00000            
+REMARK 350   BIOMT1  25  0.442738 -0.532356  0.721512        0.00000            
+REMARK 350   BIOMT2  25  0.015207  0.809017  0.587589        0.00000            
+REMARK 350   BIOMT3  25 -0.896522 -0.249176  0.366279        0.00000            
+REMARK 350   BIOMT1  26  0.416540 -0.024606 -0.908784        0.00000            
+REMARK 350   BIOMT2  26  0.861370 -0.309017  0.403175        0.00000            
+REMARK 350   BIOMT3  26 -0.290750 -0.950738 -0.107523        0.00000            
+REMARK 350   BIOMT1  27  0.416540 -0.861370 -0.290750        0.00000            
+REMARK 350   BIOMT2  27  0.024606 -0.309017  0.950738        0.00000            
+REMARK 350   BIOMT3  27 -0.908784 -0.403175 -0.107523        0.00000            
+REMARK 350   BIOMT1  28 -0.458930 -0.846163  0.270909        0.00000            
+REMARK 350   BIOMT2  28 -0.507750  0.500000  0.701562        0.00000            
+REMARK 350   BIOMT3  28 -0.729091  0.184413 -0.659104        0.00000            
+REMARK 350   BIOMT1  29 -1.000000 -0.000000  0.000000        0.00000            
+REMARK 350   BIOMT2  29 -0.000000  1.000000 -0.000000        0.00000            
+REMARK 350   BIOMT3  29  0.000000 -0.000000 -1.000000        0.00000            
+REMARK 350   BIOMT1  30 -0.458930  0.507750 -0.729091        0.00000            
+REMARK 350   BIOMT2  30  0.846163  0.500000 -0.184414        0.00000            
+REMARK 350   BIOMT3  30  0.270909 -0.701562 -0.659104        0.00000            
+REMARK 350   BIOMT1  31 -0.431983  0.846163  0.312088        0.00000            
+REMARK 350   BIOMT2  31 -0.846163 -0.500000  0.184414        0.00000            
+REMARK 350   BIOMT3  31  0.312088 -0.184413  0.931983        0.00000            
+REMARK 350   BIOMT1  32  0.433194  0.861370 -0.265300        0.00000            
+REMARK 350   BIOMT2  32 -0.861370  0.309017 -0.403175        0.00000            
+REMARK 350   BIOMT3  32 -0.265300  0.403175  0.875823        0.00000            
+REMARK 350   BIOMT1  33  0.999537  0.024606 -0.017871        0.00000            
+REMARK 350   BIOMT2  33 -0.024606  0.309017 -0.950738        0.00000            
+REMARK 350   BIOMT3  33 -0.017871  0.950738  0.309480        0.00000            
+REMARK 350   BIOMT1  34  0.484379 -0.507750  0.712437        0.00000            
+REMARK 350   BIOMT2  34  0.507750 -0.500000 -0.701562        0.00000            
+REMARK 350   BIOMT3  34  0.712437  0.701562  0.015621        0.00000            
+REMARK 350   BIOMT1  35 -0.400349  0.000000  0.916363        0.00000            
+REMARK 350   BIOMT2  35  0.000000 -1.000000  0.000000        0.00000            
+REMARK 350   BIOMT3  35  0.916363  0.000000  0.400349        0.00000            
+REMARK 350   BIOMT1  36  0.458181 -0.836764 -0.299825        0.00000            
+REMARK 350   BIOMT2  36 -0.547563 -0.000000 -0.836764        0.00000            
+REMARK 350   BIOMT3  36  0.700175  0.547563 -0.458181        0.00000            
+REMARK 350   BIOMT1  37 -0.416540 -0.861370  0.290750        0.00000            
+REMARK 350   BIOMT2  37 -0.024606 -0.309017 -0.950738        0.00000            
+REMARK 350   BIOMT3  37  0.908784 -0.403175  0.107523        0.00000            
+REMARK 350   BIOMT1  38 -0.998789 -0.015207  0.046787        0.00000            
+REMARK 350   BIOMT2  38 -0.015207 -0.809017 -0.587588        0.00000            
+REMARK 350   BIOMT3  38  0.046787 -0.587588  0.807806        0.00000            
+REMARK 350   BIOMT1  39 -0.483917  0.532356 -0.694566        0.00000            
+REMARK 350   BIOMT2  39 -0.532356 -0.809017 -0.249176        0.00000            
+REMARK 350   BIOMT3  39 -0.694566  0.249176  0.674900        0.00000            
+REMARK 350   BIOMT1  40  0.416540  0.024606 -0.908784        0.00000            
+REMARK 350   BIOMT2  40 -0.861370 -0.309017 -0.403175        0.00000            
+REMARK 350   BIOMT3  40 -0.290750  0.950738 -0.107523        0.00000            
+REMARK 350   BIOMT1  41 -0.442738  0.532356 -0.721512        0.00000            
+REMARK 350   BIOMT2  41  0.015207  0.809017  0.587588        0.00000            
+REMARK 350   BIOMT3  41  0.896522  0.249176 -0.366279        0.00000            
+REMARK 350   BIOMT1  42  0.442738 -0.015207 -0.896522        0.00000            
+REMARK 350   BIOMT2  42  0.532356  0.809017  0.249176        0.00000            
+REMARK 350   BIOMT3  42  0.721512 -0.587588  0.366279        0.00000            
+REMARK 350   BIOMT1  43  0.433194 -0.861370 -0.265300        0.00000            
+REMARK 350   BIOMT2  43  0.861370  0.309017  0.403175        0.00000            
+REMARK 350   BIOMT3  43 -0.265300 -0.403175  0.875823        0.00000            
+REMARK 350   BIOMT1  44 -0.458181 -0.836764  0.299825        0.00000            
+REMARK 350   BIOMT2  44  0.547563  0.000000  0.836764        0.00000            
+REMARK 350   BIOMT3  44 -0.700175  0.547563  0.458181        0.00000            
+REMARK 350   BIOMT1  45 -0.999537  0.024606  0.017871        0.00000            
+REMARK 350   BIOMT2  45  0.024606  0.309017  0.950738        0.00000            
+REMARK 350   BIOMT3  45  0.017871  0.950738 -0.309480        0.00000            
+REMARK 350   BIOMT1  46 -0.431983 -0.846163  0.312088        0.00000            
+REMARK 350   BIOMT2  46  0.846163 -0.500000 -0.184413        0.00000            
+REMARK 350   BIOMT3  46  0.312088  0.184414  0.931983        0.00000            
+REMARK 350   BIOMT1  47 -0.998789  0.015207  0.046787        0.00000            
+REMARK 350   BIOMT2  47  0.015207 -0.809017  0.587589        0.00000            
+REMARK 350   BIOMT3  47  0.046787  0.587589  0.807806        0.00000            
+REMARK 350   BIOMT1  48 -0.458181  0.547563 -0.700175        0.00000            
+REMARK 350   BIOMT2  48 -0.836764  0.000000  0.547563        0.00000            
+REMARK 350   BIOMT3  48  0.299825  0.836764  0.458181        0.00000            
+REMARK 350   BIOMT1  49  0.442738  0.015207 -0.896522        0.00000            
+REMARK 350   BIOMT2  49 -0.532356  0.809017 -0.249176        0.00000            
+REMARK 350   BIOMT3  49  0.721512  0.587589  0.366279        0.00000            
+REMARK 350   BIOMT1  50  0.458930 -0.846163 -0.270909        0.00000            
+REMARK 350   BIOMT2  50  0.507750  0.500000 -0.701562        0.00000            
+REMARK 350   BIOMT3  50  0.729091  0.184414  0.659104        0.00000            
+REMARK 350   BIOMT1  51  0.458181 -0.547563  0.700175        0.00000            
+REMARK 350   BIOMT2  51 -0.836764 -0.000000  0.547563        0.00000            
+REMARK 350   BIOMT3  51 -0.299825 -0.836764 -0.458181        0.00000            
+REMARK 350   BIOMT1  52 -0.442738 -0.015207  0.896522        0.00000            
+REMARK 350   BIOMT2  52 -0.532356  0.809017 -0.249176        0.00000            
+REMARK 350   BIOMT3  52 -0.721512 -0.587589 -0.366279        0.00000            
+REMARK 350   BIOMT1  53 -0.458930  0.846163  0.270909        0.00000            
+REMARK 350   BIOMT2  53  0.507750  0.500000 -0.701562        0.00000            
+REMARK 350   BIOMT3  53 -0.729091 -0.184414 -0.659104        0.00000            
+REMARK 350   BIOMT1  54  0.431983  0.846163 -0.312088        0.00000            
+REMARK 350   BIOMT2  54  0.846163 -0.500000 -0.184414        0.00000            
+REMARK 350   BIOMT3  54 -0.312088 -0.184414 -0.931983        0.00000            
+REMARK 350   BIOMT1  55  0.998789 -0.015207 -0.046787        0.00000            
+REMARK 350   BIOMT2  55  0.015207 -0.809017  0.587588        0.00000            
+REMARK 350   BIOMT3  55 -0.046787 -0.587588 -0.807806        0.00000            
+REMARK 350   BIOMT1  56  0.416540  0.861370 -0.290750        0.00000            
+REMARK 350   BIOMT2  56 -0.024606 -0.309017 -0.950738        0.00000            
+REMARK 350   BIOMT3  56 -0.908784  0.403175 -0.107523        0.00000            
+REMARK 350   BIOMT1  57  0.998789  0.015207 -0.046787        0.00000            
+REMARK 350   BIOMT2  57 -0.015207 -0.809017 -0.587588        0.00000            
+REMARK 350   BIOMT3  57 -0.046787  0.587588 -0.807806        0.00000            
+REMARK 350   BIOMT1  58  0.483917 -0.532356  0.694566        0.00000            
+REMARK 350   BIOMT2  58 -0.532356 -0.809017 -0.249176        0.00000            
+REMARK 350   BIOMT3  58  0.694566 -0.249176 -0.674900        0.00000            
+REMARK 350   BIOMT1  59 -0.416540 -0.024606  0.908784        0.00000            
+REMARK 350   BIOMT2  59 -0.861370 -0.309017 -0.403175        0.00000            
+REMARK 350   BIOMT3  59  0.290750 -0.950738  0.107523        0.00000            
+REMARK 350   BIOMT1  60 -0.458181  0.836764  0.299825        0.00000            
+REMARK 350   BIOMT2  60 -0.547563 -0.000000 -0.836764        0.00000            
+REMARK 350   BIOMT3  60 -0.700174 -0.547563  0.458181        0.00000            
+REMARK 465                                                                      
+REMARK 465 MISSING RESIDUES                                                     
+REMARK 465 THE FOLLOWING RESIDUES WERE NOT LOCATED IN THE                       
+REMARK 465 EXPERIMENT. (M=MODEL NUMBER; RES=RESIDUE NAME; C=CHAIN               
+REMARK 465 IDENTIFIER; SSSEQ=SEQUENCE NUMBER; I=INSERTION CODE.)                
+REMARK 465                                                                      
+REMARK 465   M RES C SSSEQI                                                     
+REMARK 465     LEU C   143                                                      
+REMARK 465     PRO C   144                                                      
+REMARK 465     GLU C   145                                                      
+REMARK 465     THR C   146                                                      
+REMARK 465     THR C   147                                                      
+REMARK 465     VAL C   148                                                      
+REMARK 465     VAL C   149                                                      
+REMARK 465     PRO D   144                                                      
+REMARK 465     GLU D   145                                                      
+REMARK 465     THR D   146                                                      
+REMARK 465     THR D   147                                                      
+REMARK 465     VAL D   148                                                      
+REMARK 465     VAL D   149                                                      
+REMARK 465     PRO B   144                                                      
+REMARK 465     GLU B   145                                                      
+REMARK 465     THR B   146                                                      
+REMARK 465     THR B   147                                                      
+REMARK 465     VAL B   148                                                      
+REMARK 465     VAL B   149                                                      
+REMARK 465     LEU A   143                                                      
+REMARK 465     PRO A   144                                                      
+REMARK 465     GLU A   145                                                      
+REMARK 465     THR A   146                                                      
+REMARK 465     THR A   147                                                      
+REMARK 465     VAL A   148                                                      
+REMARK 465     VAL A   149                                                      
+REMARK 500                                                                      
+REMARK 500 GEOMETRY AND STEREOCHEMISTRY                                         
+REMARK 500 SUBTOPIC: COVALENT BOND ANGLES                                       
+REMARK 500                                                                      
+REMARK 500 THE STEREOCHEMICAL PARAMETERS OF THE FOLLOWING RESIDUES              
+REMARK 500 HAVE VALUES WHICH DEVIATE FROM EXPECTED VALUES BY MORE               
+REMARK 500 THAN 6*RMSD (M=MODEL NUMBER; RES=RESIDUE NAME; C=CHAIN               
+REMARK 500 IDENTIFIER; SSEQ=SEQUENCE NUMBER; I=INSERTION CODE).                 
+REMARK 500                                                                      
+REMARK 500 STANDARD TABLE:                                                      
+REMARK 500 FORMAT: (10X,I3,1X,A3,1X,A1,I4,A1,3(1X,A4,2X),12X,F5.1)              
+REMARK 500                                                                      
+REMARK 500 EXPECTED VALUES PROTEIN: ENGH AND HUBER, 1999                        
+REMARK 500 EXPECTED VALUES NUCLEIC ACID: CLOWNEY ET AL 1996                     
+REMARK 500                                                                      
+REMARK 500  M RES CSSEQI ATM1   ATM2   ATM3                                     
+REMARK 500    LEU C  15   CA  -  CB  -  CG  ANGL. DEV. = -14.3 DEGREES          
+REMARK 500                                                                      
+REMARK 500 REMARK: NULL                                                         
+REMARK 500                                                                      
+REMARK 500 GEOMETRY AND STEREOCHEMISTRY                                         
+REMARK 500 SUBTOPIC: TORSION ANGLES                                             
+REMARK 500                                                                      
+REMARK 500 TORSION ANGLES OUTSIDE THE EXPECTED RAMACHANDRAN REGIONS:            
+REMARK 500 (M=MODEL NUMBER; RES=RESIDUE NAME; C=CHAIN IDENTIFIER;               
+REMARK 500 SSEQ=SEQUENCE NUMBER; I=INSERTION CODE).                             
+REMARK 500                                                                      
+REMARK 500 STANDARD TABLE:                                                      
+REMARK 500 FORMAT:(10X,I3,1X,A3,1X,A1,I4,A1,4X,F7.2,3X,F7.2)                    
+REMARK 500                                                                      
+REMARK 500 EXPECTED VALUES: GJ KLEYWEGT AND TA JONES (1996). PHI/PSI-           
+REMARK 500 CHOLOGY: RAMACHANDRAN REVISITED. STRUCTURE 4, 1395 - 1400            
+REMARK 500                                                                      
+REMARK 500  M RES CSSEQI        PSI       PHI                                   
+REMARK 500    PHE C  18      -31.08    -30.75                                   
+REMARK 500    ARG C  28      -77.87    -43.89                                   
+REMARK 500    ASP C  29      -70.92    -27.37                                   
+REMARK 500    TYR C  38       -8.48   -155.95                                   
+REMARK 500    ARG C  39      -74.92    -34.06                                   
+REMARK 500    GLU C  40      -70.64    -23.55                                   
+REMARK 500    SER C  44      155.94    -36.01                                   
+REMARK 500    SER C  49      156.14    167.47                                   
+REMARK 500    ARG C  56      -70.07    -52.64                                   
+REMARK 500    THR C  70      -71.06    -51.23                                   
+REMARK 500    TRP C  71      -29.13    -38.13                                   
+REMARK 500    ASN C  75       -2.38   -153.04                                   
+REMARK 500    GLU C  77      -66.68    -95.74                                   
+REMARK 500    ASP C  78      106.53    -46.94                                   
+REMARK 500    VAL C  86      -16.12    -42.72                                   
+REMARK 500    THR C  91      -90.24   -118.21                                   
+REMARK 500    ARG C 112      -66.04    -21.39                                   
+REMARK 500    GLU C 113      -70.51    -42.41                                   
+REMARK 500    SER C 121      -72.82    -40.20                                   
+REMARK 500    ALA C 137      160.42    -47.64                                   
+REMARK 500    GLU D   8       15.56    -62.44                                   
+REMARK 500    ASP D  22        2.94    -65.95                                   
+REMARK 500    ARG D  28      -76.01    -50.56                                   
+REMARK 500    TYR D  38       -6.02   -157.47                                   
+REMARK 500    ARG D  39      -72.92    -44.21                                   
+REMARK 500    GLU D  40      -65.10    -26.80                                   
+REMARK 500    SER D  44      158.45    -34.12                                   
+REMARK 500    SER D  49      147.96    166.89                                   
+REMARK 500    THR D  53      -70.10    -47.83                                   
+REMARK 500    ASN D  75      -12.27   -143.51                                   
+REMARK 500    VAL D  86      -13.49    -46.45                                   
+REMARK 500    VAL D  89      -77.17    -78.23                                   
+REMARK 500    ASN D  90      -11.05    -40.46                                   
+REMARK 500    THR D  91      -52.83   -127.58                                   
+REMARK 500    LEU D 100      -75.05    -41.76                                   
+REMARK 500    LEU D 101      -49.46    -27.06                                   
+REMARK 500    GLU D 113      -72.04    -55.71                                   
+REMARK 500    TRP D 125      -70.15    -48.16                                   
+REMARK 500    ALA D 131      -33.97    -36.03                                   
+REMARK 500    PRO D 134      177.27    -53.14                                   
+REMARK 500    PRO D 135      -72.12    -65.49                                   
+REMARK 500    ILE D 139      139.18    178.07                                   
+REMARK 500    SER D 141     -147.31   -174.25                                   
+REMARK 500    GLU B   8      -54.45    -19.26                                   
+REMARK 500    PHE B   9       35.77    -91.71                                   
+REMARK 500    LEU B  16       -7.64    -58.03                                   
+REMARK 500    PHE B  18      -14.95    -39.33                                   
+REMARK 500    ARG B  28      -76.84    -53.21                                   
+REMARK 500    ASP B  29      -30.66    -38.92                                   
+REMARK 500    LEU B  37       39.88   -141.75                                   
+REMARK 500    TYR B  38       -5.05   -169.87                                   
+REMARK 500    ARG B  39      -75.02    -43.14                                   
+REMARK 500    GLU B  40      -67.09    -28.46                                   
+REMARK 500    SER B  44      155.20    -27.99                                   
+REMARK 500    SER B  49      148.93    179.29                                   
+REMARK 500    ASN B  74       43.13    -75.60                                   
+REMARK 500    ASN B  75      -42.63   -158.31                                   
+REMARK 500    GLU B  77      -88.20   -101.33                                   
+REMARK 500    ASP B  78       98.72    -31.12                                   
+REMARK 500    ALA B  80      -37.84    -37.24                                   
+REMARK 500    THR B  91      -80.74   -115.17                                   
+REMARK 500    TRP B 102      -71.11    -69.86                                   
+REMARK 500    HIS B 104      -75.78    -73.17                                   
+REMARK 500    ILE B 105      -46.19    -29.88                                   
+REMARK 500    PHE B 110      -14.98   -144.67                                   
+REMARK 500    ARG B 112      -52.02    -28.84                                   
+REMARK 500    GLU B 113      -75.22    -51.94                                   
+REMARK 500    VAL B 124      -52.39    -27.69                                   
+REMARK 500    TRP B 125      -76.27    -62.31                                   
+REMARK 500    ALA B 131      -29.13    -39.80                                   
+REMARK 500    PRO B 135      -70.24    -41.51                                   
+REMARK 500    ALA A  11     -153.15   -118.82                                   
+REMARK 500    THR A  12      139.72   -176.98                                   
+REMARK 500    ASP A  22       41.55    -74.78                                   
+REMARK 500    ARG A  28      -78.64    -42.43                                   
+REMARK 500    TYR A  38       -3.79   -154.77                                   
+REMARK 500    GLU A  40      -78.30    -36.56                                   
+REMARK 500    SER A  44      164.79    -44.45                                   
+REMARK 500    SER A  49      156.84    177.74                                   
+REMARK 500    THR A  70      -70.39    -75.91                                   
+REMARK 500    TRP A  71      -28.55    -39.48                                   
+REMARK 500    ASN A  75      -10.64   -144.86                                   
+REMARK 500    PRO A  79      -70.23    -47.42                                   
+REMARK 500    ALA A  80      -63.25    -14.85                                   
+REMARK 500    VAL A  86      -11.63    -44.43                                   
+REMARK 500    THR A  91      -56.02   -123.74                                   
+REMARK 500    VAL A 124      -78.82     -9.08                                   
+REMARK 500    TRP A 125      -71.14    -42.33                                   
+REMARK 500    PRO A 134      156.70    -40.31                                   
+REMARK 500    SER A 141      116.56    178.19                                   
+REMARK 500                                                                      
+REMARK 500 REMARK: NULL                                                         
+DBREF  1QGT C    1   149  UNP    Q67855   Q67855_HPBV0     1    149             
+DBREF  1QGT D    1   149  UNP    Q67855   Q67855_HPBV0     1    149             
+DBREF  1QGT B    1   149  UNP    Q67855   Q67855_HPBV0     1    149             
+DBREF  1QGT A    1   149  UNP    Q67855   Q67855_HPBV0     1    149             
+SEQRES   1 C  149  MET ASP ILE ASP PRO TYR LYS GLU PHE GLY ALA THR VAL          
+SEQRES   2 C  149  GLU LEU LEU SER PHE LEU PRO SER ASP PHE PHE PRO SER          
+SEQRES   3 C  149  VAL ARG ASP LEU LEU ASP THR ALA SER ALA LEU TYR ARG          
+SEQRES   4 C  149  GLU ALA LEU GLU SER PRO GLU HIS CYS SER PRO HIS HIS          
+SEQRES   5 C  149  THR ALA LEU ARG GLN ALA ILE LEU CYS TRP GLY GLU LEU          
+SEQRES   6 C  149  MET THR LEU ALA THR TRP VAL GLY ASN ASN LEU GLU ASP          
+SEQRES   7 C  149  PRO ALA SER ARG ASP LEU VAL VAL ASN TYR VAL ASN THR          
+SEQRES   8 C  149  ASN MET GLY LEU LYS ILE ARG GLN LEU LEU TRP PHE HIS          
+SEQRES   9 C  149  ILE SER CYS LEU THR PHE GLY ARG GLU THR VAL LEU GLU          
+SEQRES  10 C  149  TYR LEU VAL SER PHE GLY VAL TRP ILE ARG THR PRO PRO          
+SEQRES  11 C  149  ALA TYR ARG PRO PRO ASN ALA PRO ILE LEU SER THR LEU          
+SEQRES  12 C  149  PRO GLU THR THR VAL VAL                                      
+SEQRES   1 D  149  MET ASP ILE ASP PRO TYR LYS GLU PHE GLY ALA THR VAL          
+SEQRES   2 D  149  GLU LEU LEU SER PHE LEU PRO SER ASP PHE PHE PRO SER          
+SEQRES   3 D  149  VAL ARG ASP LEU LEU ASP THR ALA SER ALA LEU TYR ARG          
+SEQRES   4 D  149  GLU ALA LEU GLU SER PRO GLU HIS CYS SER PRO HIS HIS          
+SEQRES   5 D  149  THR ALA LEU ARG GLN ALA ILE LEU CYS TRP GLY GLU LEU          
+SEQRES   6 D  149  MET THR LEU ALA THR TRP VAL GLY ASN ASN LEU GLU ASP          
+SEQRES   7 D  149  PRO ALA SER ARG ASP LEU VAL VAL ASN TYR VAL ASN THR          
+SEQRES   8 D  149  ASN MET GLY LEU LYS ILE ARG GLN LEU LEU TRP PHE HIS          
+SEQRES   9 D  149  ILE SER CYS LEU THR PHE GLY ARG GLU THR VAL LEU GLU          
+SEQRES  10 D  149  TYR LEU VAL SER PHE GLY VAL TRP ILE ARG THR PRO PRO          
+SEQRES  11 D  149  ALA TYR ARG PRO PRO ASN ALA PRO ILE LEU SER THR LEU          
+SEQRES  12 D  149  PRO GLU THR THR VAL VAL                                      
+SEQRES   1 B  149  MET ASP ILE ASP PRO TYR LYS GLU PHE GLY ALA THR VAL          
+SEQRES   2 B  149  GLU LEU LEU SER PHE LEU PRO SER ASP PHE PHE PRO SER          
+SEQRES   3 B  149  VAL ARG ASP LEU LEU ASP THR ALA SER ALA LEU TYR ARG          
+SEQRES   4 B  149  GLU ALA LEU GLU SER PRO GLU HIS CYS SER PRO HIS HIS          
+SEQRES   5 B  149  THR ALA LEU ARG GLN ALA ILE LEU CYS TRP GLY GLU LEU          
+SEQRES   6 B  149  MET THR LEU ALA THR TRP VAL GLY ASN ASN LEU GLU ASP          
+SEQRES   7 B  149  PRO ALA SER ARG ASP LEU VAL VAL ASN TYR VAL ASN THR          
+SEQRES   8 B  149  ASN MET GLY LEU LYS ILE ARG GLN LEU LEU TRP PHE HIS          
+SEQRES   9 B  149  ILE SER CYS LEU THR PHE GLY ARG GLU THR VAL LEU GLU          
+SEQRES  10 B  149  TYR LEU VAL SER PHE GLY VAL TRP ILE ARG THR PRO PRO          
+SEQRES  11 B  149  ALA TYR ARG PRO PRO ASN ALA PRO ILE LEU SER THR LEU          
+SEQRES  12 B  149  PRO GLU THR THR VAL VAL                                      
+SEQRES   1 A  149  MET ASP ILE ASP PRO TYR LYS GLU PHE GLY ALA THR VAL          
+SEQRES   2 A  149  GLU LEU LEU SER PHE LEU PRO SER ASP PHE PHE PRO SER          
+SEQRES   3 A  149  VAL ARG ASP LEU LEU ASP THR ALA SER ALA LEU TYR ARG          
+SEQRES   4 A  149  GLU ALA LEU GLU SER PRO GLU HIS CYS SER PRO HIS HIS          
+SEQRES   5 A  149  THR ALA LEU ARG GLN ALA ILE LEU CYS TRP GLY GLU LEU          
+SEQRES   6 A  149  MET THR LEU ALA THR TRP VAL GLY ASN ASN LEU GLU ASP          
+SEQRES   7 A  149  PRO ALA SER ARG ASP LEU VAL VAL ASN TYR VAL ASN THR          
+SEQRES   8 A  149  ASN MET GLY LEU LYS ILE ARG GLN LEU LEU TRP PHE HIS          
+SEQRES   9 A  149  ILE SER CYS LEU THR PHE GLY ARG GLU THR VAL LEU GLU          
+SEQRES  10 A  149  TYR LEU VAL SER PHE GLY VAL TRP ILE ARG THR PRO PRO          
+SEQRES  11 A  149  ALA TYR ARG PRO PRO ASN ALA PRO ILE LEU SER THR LEU          
+SEQRES  12 A  149  PRO GLU THR THR VAL VAL                                      
+HELIX    1   1 LYS C    7  PHE C    9  5                                   3    
+HELIX    2   2 VAL C   13  PHE C   18  1                                   6    
+HELIX    3   3 SER C   21  PHE C   23  5                                   3    
+HELIX    4   4 VAL C   27  GLU C   43  1                                  17    
+HELIX    5   5 PRO C   50  GLY C   73  1                                  24    
+HELIX    6   6 PRO C   79  ASN C   90  1                                  12    
+HELIX    7   7 ASN C   92  PHE C  110  1                                  19    
+HELIX    8   8 ARG C  112  ARG C  127  1                                  16    
+HELIX    9   9 PRO C  130  TYR C  132  5                                   3    
+HELIX   10  10 LYS D    7  PHE D    9  5                                   3    
+HELIX   11  11 VAL D   13  PHE D   18  1                                   6    
+HELIX   12  12 SER D   21  PHE D   23  5                                   3    
+HELIX   13  13 VAL D   27  GLU D   43  1                                  17    
+HELIX   14  14 PRO D   50  ASN D   74  1                                  25    
+HELIX   15  15 PRO D   79  PHE D  110  1                                  32    
+HELIX   16  16 ARG D  112  ARG D  127  1                                  16    
+HELIX   17  17 LYS B    7  PHE B    9  5                                   3    
+HELIX   18  18 VAL B   13  PHE B   18  1                                   6    
+HELIX   19  19 SER B   21  PHE B   23  5                                   3    
+HELIX   20  20 VAL B   27  GLU B   43  1                                  17    
+HELIX   21  21 PRO B   50  GLY B   73  1                                  24    
+HELIX   22  22 PRO B   79  ASN B   90  1                                  12    
+HELIX   23  23 ASN B   92  ILE B  126  1                                  35    
+HELIX   24  24 VAL A   13  PHE A   18  1                                   6    
+HELIX   25  25 SER A   21  PHE A   23  5                                   3    
+HELIX   26  26 VAL A   27  GLU A   43  1                                  17    
+HELIX   27  27 PRO A   50  GLY A   73  1                                  24    
+HELIX   28  28 PRO A   79  PHE A  110  1                                  32    
+HELIX   29  29 ARG A  112  ARG A  127  1                                  16    
+HELIX   30  30 PRO A  130  TYR A  132  5                                   3    
+SSBOND   1 CYS C   61    CYS D   61                          1555   1555  2.05  
+SSBOND   2 CYS B   61    CYS A   61                          1555   1555  2.06  
+CRYST1  538.400  354.800  370.100  90.00 132.30  90.00 C 1 2 1     480          
+ORIGX1      1.000000  0.000000  0.000000        0.00000                         
+ORIGX2      0.000000  1.000000  0.000000        0.00000                         
+ORIGX3      0.000000  0.000000  1.000000        0.00000                         
+SCALE1      0.001857  0.000000  0.001690        0.00000                         
+SCALE2      0.000000  0.002818  0.000000        0.00000                         
+SCALE3      0.000000  0.000000  0.003653        0.00000                         
+MTRIX1   1  1.000000  0.000000  0.000000        0.00000    1                    
+MTRIX2   1  0.000000  1.000000  0.000000        0.00000    1                    
+MTRIX3   1  0.000000  0.000000  1.000000        0.00000    1                    
+MTRIX1   2  0.458930 -0.507750  0.729091        0.00000                         
+MTRIX2   2  0.846163  0.500000 -0.184413        0.00000                         
+MTRIX3   2 -0.270909  0.701562  0.659104        0.00000                         
+MTRIX1   3 -0.416540  0.024606  0.908784        0.00000                         
+MTRIX2   3  0.861370 -0.309017  0.403175        0.00000                         
+MTRIX3   3  0.290750  0.950738  0.107523        0.00000                         
+MTRIX1   4 -0.416540  0.861370  0.290750        0.00000                         
+MTRIX2   4  0.024606 -0.309017  0.950738        0.00000                         
+MTRIX3   4  0.908784  0.403175  0.107523        0.00000                         
+MTRIX1   5  0.458930  0.846163 -0.270909        0.00000                         
+MTRIX2   5 -0.507750  0.500000  0.701562        0.00000                         
+MTRIX3   5  0.729091 -0.184413  0.659104        0.00000                         
+MTRIX1   6  0.483917  0.532356  0.694566        0.00000                         
+MTRIX2   6  0.532356 -0.809017  0.249176        0.00000                         
+MTRIX3   6  0.694566  0.249176 -0.674900        0.00000                         
+MTRIX1   7  0.484379  0.507750  0.712437        0.00000                         
+MTRIX2   7 -0.507750 -0.500000  0.701562        0.00000                         
+MTRIX3   7  0.712437 -0.701562  0.015621        0.00000                         
+MTRIX1   8  0.458930  0.507750  0.729091        0.00000                         
+MTRIX2   8 -0.846163  0.500000  0.184414        0.00000                         
+MTRIX3   8 -0.270909 -0.701562  0.659104        0.00000                         
+MTRIX1   9  0.442738  0.532356  0.721512        0.00000                         
+MTRIX2   9 -0.015207  0.809017 -0.587588        0.00000                         
+MTRIX3   9 -0.896522  0.249176  0.366279        0.00000                         
+MTRIX1  10  0.458181  0.547563  0.700175        0.00000                         
+MTRIX2  10  0.836764  0.000000 -0.547563        0.00000                         
+MTRIX3  10 -0.299826  0.836764 -0.458181        0.00000                         
+MTRIX1  11 -0.999537 -0.024606  0.017871        0.00000                         
+MTRIX2  11 -0.024606  0.309017 -0.950738        0.00000                         
+MTRIX3  11  0.017871 -0.950738 -0.309479        0.00000                         
+MTRIX1  12 -0.484379  0.507750 -0.712437        0.00000                         
+MTRIX2  12  0.507750 -0.500000 -0.701562        0.00000                         
+MTRIX3  12 -0.712437 -0.701562 -0.015621        0.00000                         
+MTRIX1  13  0.400349  0.000000 -0.916363        0.00000                         
+MTRIX2  13  0.000000 -1.000000 -0.000000        0.00000                         
+MTRIX3  13 -0.916363 -0.000000 -0.400349        0.00000                         
+MTRIX1  14  0.431983 -0.846163 -0.312088        0.00000                         
+MTRIX2  14 -0.846163 -0.500000  0.184414        0.00000                         
+MTRIX3  14 -0.312088  0.184414 -0.931983        0.00000                         
+MTRIX1  15 -0.433194 -0.861370  0.265301        0.00000                         
+MTRIX2  15 -0.861370  0.309017 -0.403175        0.00000                         
+MTRIX3  15  0.265301 -0.403175 -0.875823        0.00000                         
+MTRIX1  16 -0.442738  0.015207  0.896522        0.00000                         
+MTRIX2  16  0.532356  0.809017  0.249176        0.00000                         
+MTRIX3  16 -0.721512  0.587588 -0.366279        0.00000                         
+MTRIX1  17 -0.433194  0.861370  0.265300        0.00000                         
+MTRIX2  17  0.861370  0.309017  0.403175        0.00000                         
+MTRIX3  17  0.265300  0.403175 -0.875823        0.00000                         
+MTRIX1  18  0.458181  0.836764 -0.299826        0.00000                         
+MTRIX2  18  0.547563  0.000000  0.836764        0.00000                         
+MTRIX3  18  0.700175 -0.547563 -0.458181        0.00000                         
+MTRIX1  19  0.999537 -0.024606 -0.017871        0.00000                         
+MTRIX2  19  0.024606  0.309017  0.950738        0.00000                         
+MTRIX3  19 -0.017871 -0.950738  0.309480        0.00000                         
+MTRIX1  20  0.442738 -0.532356  0.721512        0.00000                         
+MTRIX2  20  0.015207  0.809017  0.587589        0.00000                         
+MTRIX3  20 -0.896522 -0.249176  0.366279        0.00000                         
+MTRIX1  21  0.458181 -0.836764 -0.299825        0.00000                         
+MTRIX2  21 -0.547563 -0.000000 -0.836764        0.00000                         
+MTRIX3  21  0.700175  0.547563 -0.458181        0.00000                         
+MTRIX1  22 -0.416540 -0.861370  0.290750        0.00000                         
+MTRIX2  22 -0.024606 -0.309017 -0.950738        0.00000                         
+MTRIX3  22  0.908784 -0.403175  0.107523        0.00000                         
+MTRIX1  23 -0.998789 -0.015207  0.046787        0.00000                         
+MTRIX2  23 -0.015207 -0.809017 -0.587588        0.00000                         
+MTRIX3  23  0.046787 -0.587588  0.807806        0.00000                         
+MTRIX1  24 -0.483917  0.532356 -0.694566        0.00000                         
+MTRIX2  24 -0.532356 -0.809017 -0.249176        0.00000                         
+MTRIX3  24 -0.694566  0.249176  0.674900        0.00000                         
+MTRIX1  25  0.416540  0.024606 -0.908784        0.00000                         
+MTRIX2  25 -0.861370 -0.309017 -0.403175        0.00000                         
+MTRIX3  25 -0.290750  0.950738 -0.107523        0.00000                         
+MTRIX1  26 -0.431983 -0.846163  0.312088        0.00000                         
+MTRIX2  26  0.846163 -0.500000 -0.184413        0.00000                         
+MTRIX3  26  0.312088  0.184414  0.931983        0.00000                         
+MTRIX1  27 -0.998789  0.015207  0.046787        0.00000                         
+MTRIX2  27  0.015207 -0.809017  0.587589        0.00000                         
+MTRIX3  27  0.046787  0.587589  0.807806        0.00000                         
+MTRIX1  28 -0.458181  0.547563 -0.700175        0.00000                         
+MTRIX2  28 -0.836764  0.000000  0.547563        0.00000                         
+MTRIX3  28  0.299825  0.836764  0.458181        0.00000                         
+MTRIX1  29  0.442738  0.015207 -0.896522        0.00000                         
+MTRIX2  29 -0.532356  0.809017 -0.249176        0.00000                         
+MTRIX3  29  0.721512  0.587589  0.366279        0.00000                         
+MTRIX1  30  0.458930 -0.846163 -0.270909        0.00000                         
+MTRIX2  30  0.507750  0.500000 -0.701562        0.00000                         
+MTRIX3  30  0.729091  0.184414  0.659104        0.00000                         
