@@ -1,5 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.000_02  2016-04-21 14:23:08-04:00 America/Indiana/Indianapolis (TRIAL RELEASE)
   * first release
 

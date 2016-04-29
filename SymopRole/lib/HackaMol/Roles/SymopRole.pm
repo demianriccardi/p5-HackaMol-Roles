@@ -15,11 +15,11 @@ sub apply_pdbstr_symops {
 
   my %sym_op = (); # a hash to store them!
   #this regex may be general enough to work on entire pdb
-  foreach my $line ( grep { m/REMARK 350\s+(BIOMT|SMTRY)\d+\s+\d+/ } split( '\n' , $symops ) ){
+  foreach my $line ( grep { m/REMARK\s+\d+\s+(BIOMT|SMTRY)\d+\s+\d+/ } split( '\n' , $symops ) ){
     my @entries = split(' ', $line);
     push @{$sym_op{$entries[3]}}, V(@entries[4,5,6,7]);
-  }
 
+  }
 
   foreach my $symop (sort {$a<=>$b} keys %sym_op){
     my @mat_d = @{$sym_op{$symop}};
