@@ -50,7 +50,28 @@ $bldr->apply_pdbstr_symops($symops,$mol);
 
 $mol->qcat_print(1);
 
-$mol->print_pdb_ts([1 .. $mol->tmax], 'quick.pdb');
-#$mol->print_xyz_ts([1 .. $mol->tmax], 'quick.xyz');
+$mol->print_pdb_ts([0 .. $mol->tmax], 'quick.pdb');
+
+my $xtal_symops = 
+'
+REMARK 290   SMTRY1   1  1.000000  0.000000  0.000000       47.10000            
+REMARK 290   SMTRY2   1  0.000000  1.000000  0.000000        0.00000            
+REMARK 290   SMTRY3   1  0.000000  0.000000  1.000000        0.00000  
+REMARK 290   SMTRY1   2  1.000000  0.000000  0.000000        0.00000            
+REMARK 290   SMTRY2   2  0.000000  1.000000  0.000000       47.10000            
+REMARK 290   SMTRY3   2  0.000000  0.000000  1.000000        0.00000  
+REMARK 290   SMTRY1   3  1.000000  0.000000  0.000000        0.00000            
+REMARK 290   SMTRY2   3  0.000000  1.000000  0.000000        0.00000            
+REMARK 290   SMTRY3   3  0.000000  0.000000  1.000000       47.10000  
+REMARK 290   SMTRY1   4  1.000000  0.000000  0.000000       47.10000            
+REMARK 290   SMTRY2   4  0.000000  1.000000  0.000000       47.10000            
+REMARK 290   SMTRY3   4  0.000000  0.000000  1.000000       47.10000  
+';
+
+my $new_mol = $bldr->read_file_mol("quick.pdb");
+
+$bldr->apply_pdbstr_symops($xtal_symops,$new_mol); 
+$new_mol->qcat_print(1);
+$new_mol->print_pdb_ts([0 .. $new_mol->tmax], '1gcn_xtal.pdb');
 
 
