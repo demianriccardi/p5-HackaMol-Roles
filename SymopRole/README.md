@@ -13,7 +13,8 @@ symmetry operations.  This role is not loaded with the core; it
 must be applied as done in the synopsis.  This role is envisioned for 
 instances of the HackaMol class, which provides builder. 
 
-## Symmetry operations using copy and pasted from the PDB 
+ ''''perl   
+    ## Symmetry operations using copy and pasted from the PDB 
 
     my $symops = '
       REMARK 350 APPLY THE FOLLOWING TO CHAINS: A, B                                  
@@ -31,6 +32,7 @@ instances of the HackaMol class, which provides builder.
 
      $mol->tmax ;     # says 2
     
+''''
 
 # METHODS
 
