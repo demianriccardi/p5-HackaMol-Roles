@@ -41,6 +41,8 @@ To load a role from a file:
 #RepoROLES
 
   * SelectionRole
+  * SerialRole
+  * SymopRole
 
 # AUTHOR
 
