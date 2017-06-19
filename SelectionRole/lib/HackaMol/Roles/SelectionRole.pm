@@ -65,7 +65,7 @@ sub _regex_method {
     #my @parenth = $str =~ /(\(([^()]|(?R))*\))/g
 
     $str =~ s/(\w+)\s+([A-Za-z]+)/\$\_->$1 eq \'$2\'/g;
-    $str =~ s/(\w+)\s+(\d+)/\$\_->$1 == $2/g;
+    $str =~ s/(\w+)\s+(-?\d+)/\$\_->$1 == $2/g;
     $str =~ s/(\w+)\s+\.within\.\s+(\d+)/\$\_->$1 <= $2/g;
     $str =~ s/(\w+)\s+\.beyond\.\s+(\d+)/\$\_->$1 >= $2/g;
     $str =~ s/$_/\($common_selections{$_}\)/g foreach keys %common_selections;
